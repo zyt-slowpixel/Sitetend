@@ -1,0 +1,18 @@
+---
+layout: base.njk
+title: Home
+---
+<section class="hero">
+  <h1>{{ site.name }}</h1>
+  <p class="role">{{ site.role }} in {{ site.city }}</p>
+  <p>{{ site.intro }}</p>
+</section>
+<section>
+  <h2>Selected work</h2>
+  <p>Three projects from the last two years, from research to shipped product.</p>
+  <ul>
+  {%- for p in collections.work %}
+    <li><a href="{{ p.url }}">{{ p.data.title }}</a></li>
+  {%- endfor %}
+  </ul>
+</section>

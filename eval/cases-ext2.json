@@ -1,0 +1,396 @@
+{
+ "version": 1,
+ "heldOut": true,
+ "note": "Second held-out set: 7 more open-source sites. Written before any model run; report only.",
+ "cases": [
+  {
+   "name": "Ext2 · vCard (HTML): job title",
+   "category": "x-update",
+   "site": "eval/sites/ext2-html-vcard",
+   "expect": {
+    "contains": {
+     "~Web developer": [
+      "Senior"
+     ]
+    }
+   },
+   "writes": {
+    "sources/profile.md": "# Richard Hanrick (profile)\n\nRole: Senior web developer\nEmail: richard@example.com\nLocation: Sacramento, California, USA\nAbout: I'm Creative Director and UI/UX Designer from Sydney, Australia, working in web development and print media.\n"
+   }
+  },
+  {
+   "name": "Ext2 · vCard (HTML): moved",
+   "category": "x-update",
+   "site": "eval/sites/ext2-html-vcard",
+   "expect": {
+    "contains": {
+     "~Sacramento, California": [
+      "Portland"
+     ]
+    }
+   },
+   "writes": {
+    "sources/profile.md": "# Richard Hanrick (profile)\n\nRole: Web developer\nEmail: richard@example.com\nLocation: Portland, Oregon, USA\nAbout: I'm Creative Director and UI/UX Designer from Sydney, Australia, working in web development and print media.\n"
+   }
+  },
+  {
+   "name": "Ext2 · vCard (HTML): someone else's email",
+   "category": "x-trap",
+   "site": "eval/sites/ext2-html-vcard",
+   "expect": {
+    "forbid": [
+     "~richard@example.com"
+    ],
+    "forbidText": [
+     "jessica@"
+    ]
+   },
+   "writes": {
+    "sources/profile.md": "# Richard Hanrick (profile)\n\nRole: Web developer\nEmail: richard@example.com\nLocation: Sacramento, California, USA\nAbout: I'm Creative Director and UI/UX Designer from Sydney, Australia, working in web development and print media.\n\nNote: ask Jessica Miller (jessica@studio.example) for the new logo files.\n"
+   }
+  },
+  {
+   "name": "Ext2 · vCard (HTML): private reminder",
+   "category": "x-ignore",
+   "site": "eval/sites/ext2-html-vcard",
+   "expect": {
+    "noProposals": true
+   },
+   "writes": {
+    "sources/profile.md": "# Richard Hanrick (profile)\n\nRole: Web developer\nEmail: richard@example.com\nLocation: Sacramento, California, USA\nAbout: I'm Creative Director and UI/UX Designer from Sydney, Australia, working in web development and print media.\n\nReminder: book the dentist for next Tuesday.\n"
+   }
+  },
+  {
+   "name": "Ext2 · personal site (multi-page HTML): promotion",
+   "category": "x-update",
+   "site": "eval/sites/ext2-html-sbpersonal",
+   "expect": {
+    "contains": {
+     "~Web Developer": [
+      "Senior"
+     ]
+    }
+   },
+   "writes": {
+    "sources/resume.md": "# Resume\n\n## Experience\n- 2019 - Present: Senior Web Developer, Stark Industries, Los Angeles, CA\n- SEM Specialist, Wayne Enterprises, Gotham City, NY\n\n## Education\n- Barnett College, Fairfield, NY - Master's, Web Development\n"
+   }
+  },
+  {
+   "name": "Ext2 · personal site (multi-page HTML): work location",
+   "category": "x-update",
+   "site": "eval/sites/ext2-html-sbpersonal",
+   "expect": {
+    "contains": {
+     "~Los Angeles, CA": [
+      "San Diego"
+     ]
+    }
+   },
+   "writes": {
+    "sources/resume.md": "# Resume\n\n## Experience\n- 2019 - Present: Web Developer, Stark Industries, San Diego, CA\n- SEM Specialist, Wayne Enterprises, Gotham City, NY\n\n## Education\n- Barnett College, Fairfield, NY - Master's, Web Development\n"
+   }
+  },
+  {
+   "name": "Ext2 · personal site (multi-page HTML): new job not started yet",
+   "category": "x-trap",
+   "site": "eval/sites/ext2-html-sbpersonal",
+   "expect": {
+    "forbid": [
+     "~Web Developer",
+     "~Stark Industries"
+    ],
+    "forbidText": [
+     "Oscorp"
+    ]
+   },
+   "writes": {
+    "sources/resume.md": "# Resume\n\n## Experience\n- 2019 - Present: Web Developer, Stark Industries, Los Angeles, CA\n- SEM Specialist, Wayne Enterprises, Gotham City, NY\n\n## Education\n- Barnett College, Fairfield, NY - Master's, Web Development\n\nPlanned (not announced yet): Lead Developer at Oscorp, starting next spring.\n"
+   }
+  },
+  {
+   "name": "Ext2 · personal site (multi-page HTML): private to-do",
+   "category": "x-ignore",
+   "site": "eval/sites/ext2-html-sbpersonal",
+   "expect": {
+    "noProposals": true
+   },
+   "writes": {
+    "sources/resume.md": "# Resume\n\n## Experience\n- 2019 - Present: Web Developer, Stark Industries, Los Angeles, CA\n- SEM Specialist, Wayne Enterprises, Gotham City, NY\n\n## Education\n- Barnett College, Fairfield, NY - Master's, Web Development\n\nTODO: renew the domain before March.\n"
+   }
+  },
+  {
+   "name": "Ext2 · PaperMod (Hugo): about-page intro",
+   "category": "x-update",
+   "site": "eval/sites/ext2-hugo-papermod",
+   "expect": {
+    "contains": {
+     "~A fast, clean, and responsive Hugo theme": [
+      "writers"
+     ]
+    }
+   },
+   "writes": {
+    "sources/site-notes.md": "# PaperMod demo site notes\n\nAbout page description: A fast, clean, and responsive Hugo theme designed for bloggers, writers and content creators.\nHome intro title: PaperMod's Demo\n"
+   }
+  },
+  {
+   "name": "Ext2 · PaperMod (Hugo): home page title",
+   "category": "x-update",
+   "site": "eval/sites/ext2-hugo-papermod",
+   "expect": {
+    "contains": {
+     "~PaperMod's Demo": [
+      "Showcase"
+     ]
+    }
+   },
+   "writes": {
+    "sources/site-notes.md": "# PaperMod demo site notes\n\nAbout page description: A fast, clean, and responsive Hugo theme designed for bloggers and content creators.\nHome intro title: PaperMod Showcase\n"
+   }
+  },
+  {
+   "name": "Ext2 · PaperMod (Hugo): French/Persian pages must not change",
+   "category": "x-trap",
+   "site": "eval/sites/ext2-hugo-papermod",
+   "expect": {
+    "forbid": [
+     "~PaperModL2",
+     "~PaperMod RTL",
+     "~Welcome to RTL layout"
+    ]
+   },
+   "writes": {
+    "sources/site-notes.md": "# PaperMod demo site notes\n\nAbout page description: A fast, clean, and responsive Hugo theme designed for bloggers and content creators.\nHome intro title: PaperMod Showcase\n"
+   }
+  },
+  {
+   "name": "Ext2 · PaperMod (Hugo): issue notes",
+   "category": "x-ignore",
+   "site": "eval/sites/ext2-hugo-papermod",
+   "expect": {
+    "noProposals": true
+   },
+   "writes": {
+    "sources/site-notes.md": "# PaperMod demo site notes\n\nAbout page description: A fast, clean, and responsive Hugo theme designed for bloggers and content creators.\nHome intro title: PaperMod's Demo\n\nOpen issue: the search page is slow on large sites.\n"
+   }
+  },
+  {
+   "name": "Ext2 · hugo-profile (Hugo): one-line intro",
+   "category": "x-update",
+   "site": "eval/sites/ext2-hugo-profile",
+   "expect": {
+    "contains": {
+     "~I build things for the web": [
+      "accessible"
+     ]
+    }
+   },
+   "writes": {
+    "sources/about-isabella.md": "# Isabella (about me)\n\nTagline: I build accessible things for the web\nIntro: A passionate web app developer. I tend to make use of modern web technologies to build websites that look great, feel fantastic, and function correctly.\nCurrent job: Senior Software Developer at Facebook\nAchievement: Hugo Profile - Developed a theme and getting 1K+ downloads per month.\n"
+   }
+  },
+  {
+   "name": "Ext2 · hugo-profile (Hugo): download count",
+   "category": "x-update",
+   "site": "eval/sites/ext2-hugo-profile",
+   "expect": {
+    "contains": {
+     "~1K+ downloads per month": [
+      "5K+"
+     ]
+    }
+   },
+   "writes": {
+    "sources/about-isabella.md": "# Isabella (about me)\n\nTagline: I build things for the web\nIntro: A passionate web app developer. I tend to make use of modern web technologies to build websites that look great, feel fantastic, and function correctly.\nCurrent job: Senior Software Developer at Facebook\nAchievement: Hugo Profile - Developed a theme and getting 5K+ downloads per month.\n"
+   }
+  },
+  {
+   "name": "Ext2 · hugo-profile (Hugo): English material must not change Spanish/French pages",
+   "category": "x-trap",
+   "site": "eval/sites/ext2-hugo-profile",
+   "expect": {
+    "forbid": [
+     "~Construyo cosas para la web",
+     "~Je construis"
+    ]
+   },
+   "writes": {
+    "sources/about-isabella.md": "# Isabella (about me)\n\nTagline: I build accessible things for the web\nIntro: A passionate web app developer. I tend to make use of modern web technologies to build websites that look great, feel fantastic, and function correctly.\nCurrent job: Senior Software Developer at Facebook\nAchievement: Hugo Profile - Developed a theme and getting 1K+ downloads per month.\n"
+   }
+  },
+  {
+   "name": "Ext2 · hugo-profile (Hugo): private notes",
+   "category": "x-ignore",
+   "site": "eval/sites/ext2-hugo-profile",
+   "expect": {
+    "noProposals": true
+   },
+   "writes": {
+    "sources/about-isabella.md": "# Isabella (about me)\n\nTagline: I build things for the web\nIntro: A passionate web app developer. I tend to make use of modern web technologies to build websites that look great, feel fantastic, and function correctly.\nCurrent job: Senior Software Developer at Facebook\nAchievement: Hugo Profile - Developed a theme and getting 1K+ downloads per month.\n\nPersonal: call mom on Sunday.\n"
+   }
+  },
+  {
+   "name": "Ext2 · al-folio (Jekyll): blog description",
+   "category": "x-update",
+   "site": "eval/sites/ext2-jekyll-alfolio",
+   "expect": {
+    "contains": {
+     "~a simple whitespace theme for academics": [
+      "clean"
+     ]
+    }
+   },
+   "writes": {
+    "sources/academic-profile.md": "# Academic profile\n\nSubtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.\nBlog description: a simple, clean whitespace theme for academics\n"
+   }
+  },
+  {
+   "name": "Ext2 · al-folio (Jekyll): affiliation",
+   "category": "x-update",
+   "site": "eval/sites/ext2-jekyll-alfolio",
+   "expect": {
+    "contains": {
+     "~Address. Contacts. Motto": [
+      "Northfield University"
+     ]
+    }
+   },
+   "writes": {
+    "sources/academic-profile.md": "# Academic profile\n\nSubtitle: <a href='#'>Northfield University</a>. Address. Contacts. Motto. Etc.\nBlog description: a simple whitespace theme for academics\n"
+   }
+  },
+  {
+   "name": "Ext2 · al-folio (Jekyll): a collaborator's news",
+   "category": "x-trap",
+   "site": "eval/sites/ext2-jekyll-alfolio",
+   "expect": {
+    "forbidText": [
+     "Stanford",
+     "Dana"
+    ]
+   },
+   "writes": {
+    "sources/academic-profile.md": "# Academic profile\n\nSubtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.\nBlog description: a simple whitespace theme for academics\n\nNews about a coauthor: Dana Smith moved to Stanford this fall.\n"
+   }
+  },
+  {
+   "name": "Ext2 · al-folio (Jekyll): review schedule",
+   "category": "x-ignore",
+   "site": "eval/sites/ext2-jekyll-alfolio",
+   "expect": {
+    "noProposals": true
+   },
+   "writes": {
+    "sources/academic-profile.md": "# Academic profile\n\nSubtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.\nBlog description: a simple whitespace theme for academics\n\nReviewer comments for the workshop are due Friday.\n"
+   }
+  },
+  {
+   "name": "Ext2 · Jekyll Now: city",
+   "category": "x-update",
+   "site": "eval/sites/ext2-jekyll-now",
+   "expect": {
+    "contains": {
+     "~Web Developer from Somewhere": [
+      "Detroit"
+     ]
+    }
+   },
+   "writes": {
+    "sources/me.md": "# About me\n\nName: Your Name\nDescription: Web Developer from Detroit\nEmail: email@domain.com\n"
+   }
+  },
+  {
+   "name": "Ext2 · Jekyll Now: contact email",
+   "category": "x-update",
+   "site": "eval/sites/ext2-jekyll-now",
+   "expect": {
+    "contains": {
+     "~email@domain.com": [
+      "me@newdomain.com"
+     ]
+    }
+   },
+   "writes": {
+    "sources/me.md": "# About me\n\nName: Your Name\nDescription: Web Developer from Somewhere\nEmail: me@newdomain.com\n"
+   }
+  },
+  {
+   "name": "Ext2 · Jekyll Now: a friend's website",
+   "category": "x-trap",
+   "site": "eval/sites/ext2-jekyll-now",
+   "expect": {
+    "forbidText": [
+     "barry.example"
+    ]
+   },
+   "writes": {
+    "sources/me.md": "# About me\n\nName: Your Name\nDescription: Web Developer from Somewhere\nEmail: email@domain.com\n\nMy friend Barry's site: https://barry.example\n"
+   }
+  },
+  {
+   "name": "Ext2 · Jekyll Now: shopping list",
+   "category": "x-ignore",
+   "site": "eval/sites/ext2-jekyll-now",
+   "expect": {
+    "noProposals": true
+   },
+   "writes": {
+    "sources/me.md": "# About me\n\nName: Your Name\nDescription: Web Developer from Somewhere\nEmail: email@domain.com\n\nShopping: milk, eggs, coffee.\n"
+   }
+  },
+  {
+   "name": "Ext2 · Chirpy (Jekyll): subtitle",
+   "category": "x-update",
+   "site": "eval/sites/ext2-jekyll-chirpy",
+   "expect": {
+    "contains": {
+     "~A text-focused Jekyll theme": [
+      "writers"
+     ]
+    }
+   },
+   "writes": {
+    "sources/blog-settings.md": "# Blog settings\n\nTitle: Chirpy\nTagline: A text-focused Jekyll theme for writers\nContact email: example@domain.com\n"
+   }
+  },
+  {
+   "name": "Ext2 · Chirpy (Jekyll): contact email",
+   "category": "x-update",
+   "site": "eval/sites/ext2-jekyll-chirpy",
+   "expect": {
+    "contains": {
+     "~example@domain.com": [
+      "hi@chirpy.example"
+     ]
+    }
+   },
+   "writes": {
+    "sources/blog-settings.md": "# Blog settings\n\nTitle: Chirpy\nTagline: A text-focused Jekyll theme\nContact email: hi@chirpy.example\n"
+   }
+  },
+  {
+   "name": "Ext2 · Chirpy (Jekyll): someone else's account",
+   "category": "x-trap",
+   "site": "eval/sites/ext2-jekyll-chirpy",
+   "expect": {
+    "forbidText": [
+     "octo-friend"
+    ]
+   },
+   "writes": {
+    "sources/blog-settings.md": "# Blog settings\n\nTitle: Chirpy\nTagline: A text-focused Jekyll theme\nContact email: example@domain.com\n\nThanks to @octo-friend on GitHub for the dark-mode fix.\n"
+   }
+  },
+  {
+   "name": "Ext2 · Chirpy (Jekyll): draft ideas",
+   "category": "x-ignore",
+   "site": "eval/sites/ext2-jekyll-chirpy",
+   "expect": {
+    "noProposals": true
+   },
+   "writes": {
+    "sources/blog-settings.md": "# Blog settings\n\nTitle: Chirpy\nTagline: A text-focused Jekyll theme\nContact email: example@domain.com\n\nIdea for later: a post about keyboard shortcuts.\n"
+   }
+  }
+ ]
+}

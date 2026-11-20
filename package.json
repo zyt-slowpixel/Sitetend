@@ -1,0 +1,26 @@
+{
+  "name": "sitetend",
+  "version": "1.3.0",
+  "description": "Sitetend: a local agent that keeps your website in sync with your materials",
+  "type": "module",
+  "scripts": {
+    "test": "node tests/run_step1_tests.mjs && node tests/regressions.mjs && node tests/step2.mjs && node tests/step3.mjs && node tests/host.mjs && node tests/mcp.mjs && node tests/chat.mjs && node tests/ai_validation.mjs && node tests/text_adapter.mjs && node tests/copies.mjs && node tests/html_lists.mjs && node tests/code_changes.mjs && node tests/activity.mjs && node tests/updates.mjs && node tests/spending.mjs && node tests/backups.mjs && node tests/blake3.mjs && node tests/cloudflare.mjs && node tests/netlify.mjs && node tests/memory.mjs && node tests/materials.mjs && node tests/items.mjs && node tests/external.mjs && node tests/desktop.mjs && node tests/ui_syntax.mjs",
+    "eval": "node tools/eval.mjs",
+    "start": "node bin/sitetend.mjs"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zyt-slowpixel/Sitetend.git"
+  },
+  "homepage": "https://github.com/zyt-slowpixel/Sitetend#readme",
+  "bugs": {
+    "url": "https://github.com/zyt-slowpixel/Sitetend/issues"
+  },
+  "engines": {
+    "node": ">=22.3.0"
+  },
+  "bin": {
+    "sitetend": "bin/sitetend.mjs"
+  }
+}

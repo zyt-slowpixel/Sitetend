@@ -1,0 +1,63 @@
+{
+ "_about": "Words in other languages that Sitetend understands in input (chat in rule demo mode, file names, resume headings). Data, not interface text; and everyday Chinese and Japanese characters, used to guess the encoding of an older material file.",
+ "fieldAliases": {
+  "contact.email": [
+   "邮箱",
+   "郵箱",
+   "電子郵件",
+   "电子邮件"
+  ],
+  "profile.role": [
+   "头衔",
+   "頭銜",
+   "职位",
+   "職稱"
+  ],
+  "profile.tagline": [
+   "一句话简介",
+   "一句話簡介"
+  ],
+  "contact.location": [
+   "所在地",
+   "城市"
+  ],
+  "profile.badge": [
+   "状态标签",
+   "狀態標籤"
+  ],
+  "about.headline": [
+   "关于.*标题",
+   "關於.*標題"
+  ],
+  "profile.name": [
+   "姓名",
+   "名字"
+  ]
+ },
+ "changePatterns": [
+  "把(?:我的)?(.+?)(?:改成|改为|改為|换成|換成|更新为|更新為)[\"“'「]?(.+?)[\"”'」]?[。.]?$"
+ ],
+ "rememberPatterns": [
+  "^(?:请|請)?(?:记住|記住|记得|記得)[:：,，]?\\s*(.+)$",
+  "^(?:以后|以後|今后|今後|从现在起|從現在起)[,，]?\\s*(.+)$"
+ ],
+ "materialNames": {
+  "resume": [
+   "简历",
+   "履历"
+  ],
+  "portfolio": [
+   "作品集"
+  ],
+  "profile": [
+   "个人信息",
+   "个人资料",
+   "简介"
+  ]
+ },
+ "resumeWords": [
+  "工作经历",
+  "教育"
+ ],
+ "commonCjkCharacters": "的一是不了人我在有他这這个個们們中来來上大为為和国國地到以说說时時要就出会會可也你对對生能而子那得于於着著下自之年过過发發后後作里裡用道行所然家种種事成方多经經么麼去法学學如都同现現当當没沒动動面起看定天分还還进進好小部其些主样樣理心她本前开開但因只从從想实實日军軍者意无無力它与與长長把机機十民第公此已工使情明性知全三又关關点點正业業外将將两兩高间間由问問很最重并並物手应應而己品社文务務新物件期月度体體名产產位话話员員利数數比做被全手资資料历歷简簡设設计計师師项項目网網站页頁电電邮郵箱"
+}

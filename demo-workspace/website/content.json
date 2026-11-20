@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "siteAdapter": "json-generic",
+  "profile": {
+    "name": "Alex Morgan",
+    "badge": "Demo Portfolio · Open to Human-AI Systems Roles",
+    "role": "Product Designer & Human-Centered AI Technologist",
+    "tagline": "Building transparent, local-first tools that help creators maintain living digital artifacts without losing context.",
+    "avatarUrl": "avatar-geometric"
+  },
+  "about": {
+    "headline": "Designing for Long-Term Context & Human Control",
+    "summary": "I am an information science graduate student and full-stack prototyper focusing on inspectable AI workflows, local-first software, and calm interfaces. My work explores how software agents can collaborate with authors over months of iterative project updates while respecting manual craft.",
+    "focusAreas": [
+      "Human-AI Interaction",
+      "Local-First Software",
+      "Design Systems",
+      "Full-Stack Prototyping",
+      "Information Architecture"
+    ]
+  },
+  "resume": {
+    "headline": "Curriculum Vitae & Experience",
+    "updatedLabel": "Updated October 2026 · v2.1 PDF",
+    "downloadPath": "assets/resume.pdf",
+    "summary": "M.S. in Information candidate (2027) with 3+ years of experience shipping design systems, developer workflows, and research prototypes across academic labs and product teams.",
+    "experience": [
+      {
+        "role": "Graduate Student Instructor & UX Researcher",
+        "org": "School of Information · Interaction Lab",
+        "period": "2025 - Present",
+        "detail": "Leading studio critiques and researching mixed-initiative document maintenance workflows."
+      },
+      {
+        "role": "Product Design Intern",
+        "org": "Northstar Collaborative Tools",
+        "period": "Summer 2025",
+        "detail": "Designed version-aware review queues and diff visualizations for multi-author documentation."
+      }
+    ]
+  },
+  "contact": {
+    "headline": "Let's Collaborate on Thoughtful Tools",
+    "email": "alex.morgan.demo@northfield.edu",
+    "location": "Ann Arbor, MI (EST / UTC-5)",
+    "github": "https://github.com/alexmorgan-demo",
+    "linkedin": "https://www.linkedin.com/in/alexmorgan-demo"
+  },
+  "projects": [
+    {
+      "id": "orbit-dock",
+      "title": "Orbit Dock",
+      "category": "Systems",
+      "year": "2026 · v1.4",
+      "summary": "A workspace launcher and local context indexer that keeps research notes, terminal sessions, and design specs synchronized across project milestones.",
+      "detailOverview": "Orbit Dock solves context fragmentation for solo builders. Instead of scattering bookmarks and markdown notes across folders, Orbit Dock indexes project directories and surfaces active blockers alongside recent commits.",
+      "highlights": [
+        "Reduced project context-switching latency by 38% in a 14-participant diary study",
+        "Zero-cloud local indexing engine with deterministic snapshot diffs",
+        "Keyboard-first command palette with instant file preview"
+      ],
+      "visualTheme": "orbit-constellation",
+      "link": "https://github.com/alexmorgan-demo/orbit-dock"
+    },
+    {
+      "id": "fieldnotes",
+      "title": "Fieldnotes Studio",
+      "category": "Research",
+      "year": "2026 · v0.9",
+      "summary": "An audio-to-structured-insight synthesis notebook for qualitative UX researchers conducting longitudinal field interviews.",
+      "detailOverview": "Fieldnotes Studio links timestamped interview transcripts directly to affinity clusters. Every synthesized theme preserves verifiable verbatim quotes so research teams never lose provenance.",
+      "highlights": [
+        "Verifiable quote-to-theme provenance links across 40+ hours of interviews",
+        "Exportable markdown evidence briefs for product stakeholders",
+        "Privacy-preserving local transcript redaction pipeline"
+      ],
+      "visualTheme": "field-topography",
+      "link": "https://github.com/alexmorgan-demo/fieldnotes-studio"
+    },
+    {
+      "id": "common-ground",
+      "title": "Common Ground Transit Map",
+      "category": "Civic Tech",
+      "year": "2025 · v2.0",
+      "summary": "An accessible community transit and walkability explorer built with neighborhood associations to audit bus stop amenities.",
+      "detailOverview": "Common Ground combines GTFS transit feeds with crowd-audited sidewalk and shelter accessibility reports, helping municipal planners prioritize winter maintenance and seating upgrades.",
+      "highlights": [
+        "Mapped 220+ bus stops with volunteer-verified accessibility checklists",
+        "WCAG AAA high-contrast mode and screen-reader route summaries",
+        "Adopted by two local neighborhood mobility coalitions"
+      ],
+      "visualTheme": "civic-grid",
+      "link": "https://github.com/alexmorgan-demo/common-ground"
+    }
+  ]
+}

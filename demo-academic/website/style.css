@@ -1,0 +1,12 @@
+:root{--ink:#1f2328;--muted:#5d6670;--line:#e4e1da;--accent:#8a2b2b;--bg:#fbfaf7}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 Georgia,"Times New Roman",serif}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px}
+.masthead{border-bottom:3px double var(--line);padding:56px 0 28px;background:#fff}
+.masthead h1{font-size:38px;margin:0 0 6px;letter-spacing:-.01em}.pos{margin:0 0 10px;color:var(--muted)}
+.meta{margin:4px 0;font:14px/1.6 system-ui,sans-serif;color:var(--muted)}a{color:var(--accent)}
+section{padding:26px 0;border-bottom:1px solid var(--line)}h2{font-size:15px;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);font-family:system-ui,sans-serif;margin:0 0 12px}
+.chips{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:8px}.chips li{font:13px system-ui,sans-serif;border:1px solid var(--line);border-radius:999px;padding:3px 10px;background:#fff}
+.news{padding-left:18px}.news .d{font:13px system-ui,sans-serif;color:var(--muted);margin-right:8px}
+.pubs{padding-left:20px}.pubs li{margin-bottom:12px}.pubs .t{font-weight:bold}.pubs .a,.pubs .v{display:block;font-size:15px;color:var(--muted)}
+.teach{padding-left:18px}.foot{font:13px system-ui,sans-serif;color:var(--muted);padding:24px}
+.sk-editable [data-sk-field]:hover{outline:1px dashed var(--accent);cursor:pointer}

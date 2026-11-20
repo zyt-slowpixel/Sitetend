@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "siteAdapter": "json-generic",
+  "org": {
+    "name": "Riverbend Literacy Project",
+    "mission": "Free one-on-one reading tutoring for adults in Washtenaw County.",
+    "email": "info@riverbendliteracy.example",
+    "address": "200 N Main St, Suite 4, Ypsilanti, MI",
+    "donateUrl": "https://give.example.org/riverbend"
+  },
+  "stats": {
+    "learners": "310 adult learners served in 2025",
+    "volunteers": "120+ trained volunteer tutors"
+  },
+  "programs": [
+    {
+      "id": "one-on-one",
+      "title": "One-on-One Tutoring",
+      "summary": "Weekly sessions matched to each learner’s goals.",
+      "schedule": "Mon–Thu evenings"
+    },
+    {
+      "id": "esl",
+      "title": "English Conversation Circles",
+      "summary": "Small-group speaking practice for English learners.",
+      "schedule": "Saturdays 10 am"
+    }
+  ],
+  "board": [
+    "Dana Whitfield (Chair)",
+    "Luis Ortega (Treasurer)",
+    "Priya Natarajan (Secretary)"
+  ]
+}

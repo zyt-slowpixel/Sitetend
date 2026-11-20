@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "siteAdapter": "json-generic",
+  "restaurant": {
+    "name": "Lantern & Lime",
+    "tagline": "Seasonal plates from Great Lakes farms",
+    "address": "412 Liberty St, Ann Arbor, MI",
+    "phone": "(734) 555-0142",
+    "email": "hello@lanternlime.example",
+    "reservationUrl": "https://book.example.com/lanternlime"
+  },
+  "hours": {
+    "weekdays": "Tue–Thu 5–10 pm",
+    "weekend": "Fri–Sat 5–11 pm, Sun brunch 10 am–2 pm",
+    "closed": "Closed Mondays"
+  },
+  "menu": [
+    {
+      "id": "whitefish",
+      "name": "Smoked Whitefish Toast",
+      "description": "Rye, pickled shallot, dill crème fraîche",
+      "price": "$14"
+    },
+    {
+      "id": "squash",
+      "name": "Roasted Squash Risotto",
+      "description": "Brown butter, sage, aged gouda",
+      "price": "$22"
+    },
+    {
+      "id": "pie",
+      "name": "Tart Cherry Pie",
+      "description": "Traverse City cherries, oat crumble",
+      "price": "$9"
+    }
+  ],
+  "chef": {
+    "name": "Rosa Delgado",
+    "bio": "Chef Rosa Delgado cooked in Chicago for ten years before opening Lantern & Lime in 2022."
+  }
+}

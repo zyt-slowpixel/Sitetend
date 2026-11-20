@@ -1,0 +1,6 @@
+baseURL = "https://lowtide.example.com/"
+title = "Low Tide Orchestra"
+[params]
+description = "A seven-piece instrumental band from Detroit."
+bookingEmail = "booking@lowtide.example.com"
+latestRelease = "Harbor Lights (2025)"

@@ -1,0 +1,281 @@
+{
+ "version": 1,
+ "heldOut": true,
+ "note": "Quarto, Gatsby, Nuxt and GitHub profile READMEs. Written before any model run; report only.",
+ "cases": [
+  {
+   "name": "Quarto · qtw: new affiliation",
+   "category": "g-update",
+   "site": "eval/sites/ext6-quarto-qtw",
+   "expect": {
+    "contains": {
+     "~I am a researcher at University of Oslo": [
+      "Karolinska"
+     ]
+    }
+   },
+   "writes": {
+    "sources/cv.md": "# CV\n\nPosition: researcher at Karolinska Institutet (since September 2026)\nResearch: Electronic Health Records\nEducation: PhD in Biostatistics, University of Oslo, Oct 2022\n"
+   }
+  },
+  {
+   "name": "Quarto · qtw: research area",
+   "category": "g-update",
+   "site": "eval/sites/ext6-quarto-qtw",
+   "expect": {
+    "contains": {
+     "~My work is about Electronic Health Records": [
+      "wearable"
+     ]
+    }
+   },
+   "writes": {
+    "sources/cv.md": "# CV\n\nPosition: researcher at University of Oslo\nResearch: wearable sensor data for heart failure patients\nEducation: PhD in Biostatistics, University of Oslo, Oct 2022\n"
+   }
+  },
+  {
+   "name": "Quarto · qtw: a colleague's news",
+   "category": "g-trap",
+   "site": "eval/sites/ext6-quarto-qtw",
+   "expect": {
+    "forbidText": [
+     "Nature Medicine"
+    ]
+   },
+   "writes": {
+    "sources/cv.md": "# CV\n\nPosition: researcher at University of Oslo\nResearch: Electronic Health Records\nEducation: PhD in Biostatistics, University of Oslo, Oct 2022\n\nMy officemate just had a paper accepted in Nature Medicine.\n"
+   }
+  },
+  {
+   "name": "Quarto · qtw: private matter",
+   "category": "g-ignore",
+   "site": "eval/sites/ext6-quarto-qtw",
+   "expect": {
+    "noProposals": true
+   },
+   "writes": {
+    "sources/cv.md": "# CV\n\nPosition: researcher at University of Oslo\nResearch: Electronic Health Records\nEducation: PhD in Biostatistics, University of Oslo, Oct 2022\n\nRemember to book the flight to Bergen.\n"
+   }
+  },
+  {
+   "name": "Quarto · academic template: home page title",
+   "category": "g-update",
+   "site": "eval/sites/ext6-quarto-academic",
+   "expect": {
+    "contains": {
+     "~Quarto Academic, PhD": [
+      "Wei Zhang"
+     ]
+    }
+   },
+   "writes": {
+    "sources/lab-notes.md": "# Lab notes\n\nSite name: Quarto Academic\nTitle on the home page: Wei Zhang, PhD\nPI listed on the People page: PI Name\n"
+   }
+  },
+  {
+   "name": "Quarto · academic template: PI name",
+   "category": "g-update",
+   "site": "eval/sites/ext6-quarto-academic",
+   "expect": {
+    "contains": {
+     "~PI Name": [
+      "Wei Zhang"
+     ]
+    }
+   },
+   "writes": {
+    "sources/lab-notes.md": "# Lab notes\n\nSite name: Quarto Academic\nTitle on the home page: Quarto Academic, PhD\nPI listed on the People page: Wei Zhang\n"
+   }
+  },
+  {
+   "name": "Quarto · academic template: funding not confirmed",
+   "category": "g-trap",
+   "site": "eval/sites/ext6-quarto-academic",
+   "expect": {
+    "forbidText": [
+     "NSF CAREER"
+    ]
+   },
+   "writes": {
+    "sources/lab-notes.md": "# Lab notes\n\nSite name: Quarto Academic\nTitle on the home page: Quarto Academic, PhD\nPI listed on the People page: PI Name\n\nWe applied for an NSF CAREER award; no decision yet.\n"
+   }
+  },
+  {
+   "name": "Quarto · academic template: group meeting",
+   "category": "g-ignore",
+   "site": "eval/sites/ext6-quarto-academic",
+   "expect": {
+    "noProposals": true
+   },
+   "writes": {
+    "sources/lab-notes.md": "# Lab notes\n\nSite name: Quarto Academic\nTitle on the home page: Quarto Academic, PhD\nPI listed on the People page: PI Name\n\nLab meeting moved to Thursday 3pm.\n"
+   }
+  },
+  {
+   "name": "Gatsby · official template: author name",
+   "category": "g-update",
+   "site": "eval/sites/ext6-gatsby-blog",
+   "expect": {
+    "contains": {
+     "~Kyle Mathews": [
+      "Noor Haddad"
+     ]
+    }
+   },
+   "writes": {
+    "sources/me.md": "# About me\n\nName: Noor Haddad\nBio: who lives and works in San Francisco building useful things.\n"
+   }
+  },
+  {
+   "name": "Gatsby · official template: moved",
+   "category": "g-update",
+   "site": "eval/sites/ext6-gatsby-blog",
+   "expect": {
+    "contains": {
+     "~who lives and works in San Francisco": [
+      "Seattle"
+     ]
+    }
+   },
+   "writes": {
+    "sources/me.md": "# About me\n\nName: Kyle Mathews\nBio: who lives and works in Seattle building useful things.\n"
+   }
+  },
+  {
+   "name": "Gatsby · official template: a friend's company",
+   "category": "g-trap",
+   "site": "eval/sites/ext6-gatsby-blog",
+   "expect": {
+    "forbidText": [
+     "Lumen Labs"
+    ]
+   },
+   "writes": {
+    "sources/me.md": "# About me\n\nName: Kyle Mathews\nBio: who lives and works in San Francisco building useful things.\n\nMy friend Sam started a company called Lumen Labs.\n"
+   }
+  },
+  {
+   "name": "Gatsby · official template: to-do",
+   "category": "g-ignore",
+   "site": "eval/sites/ext6-gatsby-blog",
+   "expect": {
+    "noProposals": true
+   },
+   "writes": {
+    "sources/me.md": "# About me\n\nName: Kyle Mathews\nBio: who lives and works in San Francisco building useful things.\n\nTODO: update the laptop OS this weekend.\n"
+   }
+  },
+  {
+   "name": "Nuxt · portfolio template: moved",
+   "category": "g-update",
+   "site": "eval/sites/ext6-nuxt-portfolio",
+   "expect": {
+    "contains": {
+     "~Based in Boston, bringing": [
+      "Chicago"
+     ]
+    }
+   },
+   "writes": {
+    "sources/profile.md": "# Emma Thompson - profile\n\nRole: UX/UI Designer and Front-End Developer\nCity: Chicago (moved in October 2026)\nExperience: 6 years\n"
+   }
+  },
+  {
+   "name": "Nuxt · portfolio template: title",
+   "category": "g-update",
+   "site": "eval/sites/ext6-nuxt-portfolio",
+   "expect": {
+    "contains": {
+     "~Hey, I'm Emma Thompson UX/UI Designer": [
+      "Product Designer"
+     ]
+    }
+   },
+   "writes": {
+    "sources/profile.md": "# Emma Thompson - profile\n\nRole: Product Designer (no longer doing front-end work)\nCity: Boston\nExperience: 6 years\n"
+   }
+  },
+  {
+   "name": "Nuxt · portfolio template: client secrets",
+   "category": "g-trap",
+   "site": "eval/sites/ext6-nuxt-portfolio",
+   "expect": {
+    "forbidText": [
+     "Halcyon"
+    ]
+   },
+   "writes": {
+    "sources/profile.md": "# Emma Thompson - profile\n\nRole: UX/UI Designer and Front-End Developer\nCity: Boston\nExperience: 6 years\n\nNew client under NDA, do not mention publicly: Halcyon Bank.\n"
+   }
+  },
+  {
+   "name": "Nuxt · portfolio template: private matter",
+   "category": "g-ignore",
+   "site": "eval/sites/ext6-nuxt-portfolio",
+   "expect": {
+    "noProposals": true
+   },
+   "writes": {
+    "sources/profile.md": "# Emma Thompson - profile\n\nRole: UX/UI Designer and Front-End Developer\nCity: Boston\nExperience: 6 years\n\nDentist appointment next Tuesday.\n"
+   }
+  },
+  {
+   "name": "GitHub profile: new project",
+   "category": "g-update",
+   "site": "eval/sites/own-github-profile",
+   "expect": {
+    "contains": {
+     "~I'm currently working on": [
+      "Food Bank"
+     ]
+    }
+   },
+   "writes": {
+    "sources/notes.md": "# Priya - notes\n\nProgram: Master's student in Information Science at the Northfield University\nCurrent project: Food Bank Finder, a pantry hours app for Ann Arbor (Shelter Map is done)\nLearning: Rust and data visualization with D3\nEmail: priya.n@northfield.example.edu\nNational parks visited: 31\n"
+   }
+  },
+  {
+   "name": "GitHub profile: national parks",
+   "category": "g-update",
+   "site": "eval/sites/own-github-profile",
+   "expect": {
+    "contains": {
+     "~I have visited 31 national parks": [
+      "34"
+     ]
+    }
+   },
+   "writes": {
+    "sources/notes.md": "# Priya - notes\n\nProgram: Master's student in Information Science at the Northfield University\nCurrent project: Shelter Map, a bed availability map for Detroit shelters\nLearning: Rust and data visualization with D3\nEmail: priya.n@northfield.example.edu\nNational parks visited: 34\n"
+   }
+  },
+  {
+   "name": "GitHub profile: graduated",
+   "category": "g-update",
+   "site": "eval/sites/own-github-profile",
+   "expect": {
+    "contains": {
+     "~Master's student in Information Science": [
+      "Data"
+     ]
+    }
+   },
+   "writes": {
+    "sources/notes.md": "# Priya - notes\n\nProgram: graduated (MSI, Northfield University, 2026); now a Data Analyst at Detroit Health Department\nCurrent project: Shelter Map, a bed availability map for Detroit shelters\nLearning: Rust and data visualization with D3\nEmail: priya.n@northfield.example.edu\nNational parks visited: 31\n"
+   }
+  },
+  {
+   "name": "GitHub profile: interview",
+   "category": "g-trap",
+   "site": "eval/sites/own-github-profile",
+   "expect": {
+    "forbidText": [
+     "Stripe"
+    ]
+   },
+   "writes": {
+    "sources/notes.md": "# Priya - notes\n\nProgram: Master's student in Information Science at the Northfield University\nCurrent project: Shelter Map, a bed availability map for Detroit shelters\nLearning: Rust and data visualization with D3\nEmail: priya.n@northfield.example.edu\nNational parks visited: 31\n\nInterviewing with Stripe next week (private).\n"
+   }
+  }
+ ]
+}

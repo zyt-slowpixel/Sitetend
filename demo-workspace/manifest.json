@@ -1,0 +1,10 @@
+[
+  "website/index.html",
+  "website/content.json",
+  "website/style.css",
+  "website/app.js",
+  "sources/profile.json",
+  "sources/resume.pdf",
+  "website/assets/resume.pdf",
+  "sources/projects/orbit-dock.md"
+]

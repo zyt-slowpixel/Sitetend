@@ -1,0 +1,19 @@
+# Same line endings on every computer, so the tests behave the same on Windows, macOS and Linux.
+* text=auto eol=lf
+# Windows batch files need Windows line endings to run.
+*.bat text eol=crlf
+*.cmd text eol=crlf
+# Binary files
+*.pdf binary
+*.docx binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.icns binary
+*.woff binary
+*.woff2 binary
+*.zip binary
+# Test websites are kept byte for byte as their authors wrote them (one of them uses Windows line endings on purpose).
+eval/sites/** -text

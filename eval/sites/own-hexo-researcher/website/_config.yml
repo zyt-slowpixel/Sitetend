@@ -1,0 +1,29 @@
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+
+# Site
+title: Lena Varga
+subtitle: 'Coastal ecology, one tide pool at a time'
+description: 'PhD candidate in Ecology and Evolutionary Biology at the University of Washington.'
+keywords: ecology, tide pools, sea stars
+author: Lena Varga
+language: en
+timezone: 'America/Los_Angeles'
+
+# URL
+url: https://lenavarga.example.org
+permalink: :year/:month/:day/:title/
+
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+
+# Writing
+new_post_name: :title.md
+default_layout: post
+render_drafts: false
+
+# Extensions
+theme: landscape

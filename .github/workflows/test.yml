@@ -1,0 +1,54 @@
+# Runs the automated tests on Windows, macOS and Linux for every push and pull request.
+# Nothing is installed: Sitetend uses only Node's standard library and the files in vendor/.
+name: Tests
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: ${{ matrix.os }} · Node ${{ matrix.node }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        node: ['22']
+        include:
+          - os: ubuntu-latest
+            node: '24'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Git identity for the publishing tests
+        run: |
+          git config --global user.name "Sitetend CI"
+          git config --global user.email "ci@sitetend.invalid"
+          git config --global init.defaultBranch main
+      - name: Automated tests
+        run: npm test
+
+  # Real framework sites, end to end: install, build, accept a change, rebuild, look for the new words on the page.
+  build-check:
+    name: Real site builds · ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 40
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Build, change and rebuild real sites
+        run: node tools/build-check.mjs

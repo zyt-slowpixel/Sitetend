@@ -1,0 +1,286 @@
+{
+ "version": 1,
+ "heldOut": true,
+ "note": "Framework projects (Astro, React, Next.js, Vue, Svelte). Written before any model run; report only.",
+ "cases": [
+  {
+   "name": "Framework · Astro: contact email",
+   "category": "f-update",
+   "site": "eval/sites/ext3-astro-devportfolio",
+   "expect": {
+    "contains": {
+     "~your-email@example.com": [
+      "ryan@fitz.example"
+     ]
+    }
+   },
+   "writes": {
+    "sources/resume.md": "# Ryan Fitzgerald - resume notes\n\nEmail: ryan@fitz.example\nCurrent job: Senior Software Engineer at Tech Company (Jan 2022 - Present)\n- Led development of microservices architecture serving 1M+ users\n- Mentored team of 5 junior developers\n"
+   }
+  },
+  {
+   "name": "Framework · Astro: leading a bigger team",
+   "category": "f-update",
+   "site": "eval/sites/ext3-astro-devportfolio",
+   "expect": {
+    "contains": {
+     "~Mentored team of 5": [
+      "8"
+     ]
+    }
+   },
+   "writes": {
+    "sources/resume.md": "# Ryan Fitzgerald - resume notes\n\nEmail: your-email@example.com\nCurrent job: Senior Software Engineer at Tech Company (Jan 2022 - Present)\n- Led development of microservices architecture serving 1M+ users\n- Mentored team of 8 junior developers\n"
+   }
+  },
+  {
+   "name": "Framework · Astro: new job not started yet",
+   "category": "f-trap",
+   "site": "eval/sites/ext3-astro-devportfolio",
+   "expect": {
+    "forbid": [
+     "~Tech Company"
+    ],
+    "forbidText": [
+     "Nimbus"
+    ]
+   },
+   "writes": {
+    "sources/resume.md": "# Ryan Fitzgerald - resume notes\n\nEmail: your-email@example.com\nCurrent job: Senior Software Engineer at Tech Company (Jan 2022 - Present)\n- Led development of microservices architecture serving 1M+ users\n- Mentored team of 5 junior developers\n\nPlanned (not announced): joining Nimbus Labs as Staff Engineer next spring.\n"
+   }
+  },
+  {
+   "name": "Framework · Astro: private reminder",
+   "category": "f-ignore",
+   "site": "eval/sites/ext3-astro-devportfolio",
+   "expect": {
+    "noProposals": true
+   },
+   "writes": {
+    "sources/resume.md": "# Ryan Fitzgerald - resume notes\n\nEmail: your-email@example.com\nCurrent job: Senior Software Engineer at Tech Company (Jan 2022 - Present)\n- Led development of microservices architecture serving 1M+ users\n- Mentored team of 5 junior developers\n\nReminder: renew passport before June.\n"
+   }
+  },
+  {
+   "name": "Framework · React: promotion",
+   "category": "f-update",
+   "site": "eval/sites/ext3-react-masterportfolio",
+   "expect": {
+    "contains": {
+     "~Machine Learning Engineer": [
+      "Senior"
+     ]
+    },
+    "onlyFields": [
+     "~Machine Learning Engineer"
+    ]
+   },
+   "writes": {
+    "sources/work.md": "# Ashutosh Hathidara - work history\n\n- Senior Machine Learning Engineer, TikTok Inc., San Jose, CA, USA (June 2023 - Present)\n- Associate AI Engineer, Legato Health Technology, Hyderabad, Telangana (June 2020 - Aug 2021)\n\nEducation: Indiana University Bloomington, M.S. in Computer Science (2021 - 2023)\n"
+   }
+  },
+  {
+   "name": "Framework · React: work location",
+   "category": "f-update",
+   "site": "eval/sites/ext3-react-masterportfolio",
+   "expect": {
+    "contains": {
+     "~San Jose, CA, USA": [
+      "Seattle"
+     ]
+    }
+   },
+   "writes": {
+    "sources/work.md": "# Ashutosh Hathidara - work history\n\n- Machine Learning Engineer, TikTok Inc., Seattle, WA, USA (June 2023 - Present)\n- Associate AI Engineer, Legato Health Technology, Hyderabad, Telangana (June 2020 - Aug 2021)\n\nEducation: Indiana University Bloomington, M.S. in Computer Science (2021 - 2023)\n"
+   }
+  },
+  {
+   "name": "Framework · React: a colleague's news",
+   "category": "f-trap",
+   "site": "eval/sites/ext3-react-masterportfolio",
+   "expect": {
+    "forbidText": [
+     "Priya"
+    ]
+   },
+   "writes": {
+    "sources/work.md": "# Ashutosh Hathidara - work history\n\n- Machine Learning Engineer, TikTok Inc., San Jose, CA, USA (June 2023 - Present)\n- Associate AI Engineer, Legato Health Technology, Hyderabad, Telangana (June 2020 - Aug 2021)\n\nEducation: Indiana University Bloomington, M.S. in Computer Science (2021 - 2023)\n\nTeam news: my colleague Priya Shah was promoted to Staff Engineer.\n"
+   }
+  },
+  {
+   "name": "Framework · React: to-do",
+   "category": "f-ignore",
+   "site": "eval/sites/ext3-react-masterportfolio",
+   "expect": {
+    "noProposals": true
+   },
+   "writes": {
+    "sources/work.md": "# Ashutosh Hathidara - work history\n\n- Machine Learning Engineer, TikTok Inc., San Jose, CA, USA (June 2023 - Present)\n- Associate AI Engineer, Legato Health Technology, Hyderabad, Telangana (June 2020 - Aug 2021)\n\nEducation: Indiana University Bloomington, M.S. in Computer Science (2021 - 2023)\n\nTODO: update the GitHub token for the open source page.\n"
+   }
+  },
+  {
+   "name": "Framework · Next.js: new employer",
+   "category": "f-update",
+   "site": "eval/sites/ext3-next-tailwindblog",
+   "expect": {
+    "contains": {
+     "~Stanford University": [
+      "Northfield University"
+     ]
+    }
+   },
+   "writes": {
+    "sources/author.md": "# Tails Azimuth (author profile)\n\nOccupation: Professor of Atmospheric Science\nCompany: Northfield University\nBlog description: A blog created with Next.js and Tailwind.css\n"
+   }
+  },
+  {
+   "name": "Framework · Next.js: blog description",
+   "category": "f-update",
+   "site": "eval/sites/ext3-next-tailwindblog",
+   "expect": {
+    "contains": {
+     "~A blog created with Next.js": [
+      "weather"
+     ]
+    }
+   },
+   "writes": {
+    "sources/author.md": "# Tails Azimuth (author profile)\n\nOccupation: Professor of Atmospheric Science\nCompany: Stanford University\nBlog description: A weather blog created with Next.js and Tailwind.css\n"
+   }
+  },
+  {
+   "name": "Framework · Next.js: someone else's job title",
+   "category": "f-trap",
+   "site": "eval/sites/ext3-next-tailwindblog",
+   "expect": {
+    "forbidText": [
+     "Dean"
+    ]
+   },
+   "writes": {
+    "sources/author.md": "# Tails Azimuth (author profile)\n\nOccupation: Professor of Atmospheric Science\nCompany: Stanford University\nBlog description: A blog created with Next.js and Tailwind.css\n\nCampus news: Professor Lee became Dean of Engineering.\n"
+   }
+  },
+  {
+   "name": "Framework · Next.js: meeting schedule",
+   "category": "f-ignore",
+   "site": "eval/sites/ext3-next-tailwindblog",
+   "expect": {
+    "noProposals": true
+   },
+   "writes": {
+    "sources/author.md": "# Tails Azimuth (author profile)\n\nOccupation: Professor of Atmospheric Science\nCompany: Stanford University\nBlog description: A blog created with Next.js and Tailwind.css\n\nLab meeting moved to Thursday 3 pm.\n"
+   }
+  },
+  {
+   "name": "Framework · Vue: another book published",
+   "category": "f-update",
+   "site": "eval/sites/own-vue-studio",
+   "expect": {
+    "contains": {
+     "~illustrated 6 picture books": [
+      "7"
+     ]
+    }
+   },
+   "writes": {
+    "sources/studio-notes.md": "# Mira Okafor - studio notes\n\nTagline: Picture books, posters and editorial illustration\nBooks illustrated: 7\nCity: Columbus, Ohio\nEmail: hello@mirastudio.example\n"
+   }
+  },
+  {
+   "name": "Framework · Vue: moved",
+   "category": "f-update",
+   "site": "eval/sites/own-vue-studio",
+   "expect": {
+    "contains": {
+     "~Columbus, Ohio": [
+      "Cincinnati"
+     ]
+    }
+   },
+   "writes": {
+    "sources/studio-notes.md": "# Mira Okafor - studio notes\n\nTagline: Picture books, posters and editorial illustration\nBooks illustrated: 6\nCity: Cincinnati, Ohio\nEmail: hello@mirastudio.example\n"
+   }
+  },
+  {
+   "name": "Framework · Vue: a client's email",
+   "category": "f-trap",
+   "site": "eval/sites/own-vue-studio",
+   "expect": {
+    "forbid": [
+     "~hello@mirastudio.example"
+    ],
+    "forbidText": [
+     "art@client"
+    ]
+   },
+   "writes": {
+    "sources/studio-notes.md": "# Mira Okafor - studio notes\n\nTagline: Picture books, posters and editorial illustration\nBooks illustrated: 6\nCity: Columbus, Ohio\nEmail: hello@mirastudio.example\n\nClient contact for the poster job: art@client.example\n"
+   }
+  },
+  {
+   "name": "Framework · Vue: shopping list",
+   "category": "f-ignore",
+   "site": "eval/sites/own-vue-studio",
+   "expect": {
+    "noProposals": true
+   },
+   "writes": {
+    "sources/studio-notes.md": "# Mira Okafor - studio notes\n\nTagline: Picture books, posters and editorial illustration\nBooks illustrated: 6\nCity: Columbus, Ohio\nEmail: hello@mirastudio.example\n\nBuy: brushes, ink, A3 paper.\n"
+   }
+  },
+  {
+   "name": "Framework · Svelte: booking email",
+   "category": "f-update",
+   "site": "eval/sites/own-svelte-band",
+   "expect": {
+    "contains": {
+     "~booking@lowtides.example": [
+      "shows@lowtides.example"
+     ]
+    }
+   },
+   "writes": {
+    "sources/band-notes.md": "# The Low Tides - band notes\n\nBio: Four friends from Ypsilanti playing surf rock with too much reverb.\nBooking: shows@lowtides.example\nNew album: Saltwater Static, out on vinyl this winter.\nShows: Dec 6 The Blind Pig, Ann Arbor, MI; Dec 13 Pike Room, Pontiac, MI\n"
+   }
+  },
+  {
+   "name": "Framework · Svelte: show moved to another venue",
+   "category": "f-update",
+   "site": "eval/sites/own-svelte-band",
+   "expect": {
+    "contains": {
+     "~Pike Room": [
+      "Magic Stick"
+     ]
+    }
+   },
+   "writes": {
+    "sources/band-notes.md": "# The Low Tides - band notes\n\nBio: Four friends from Ypsilanti playing surf rock with too much reverb.\nBooking: booking@lowtides.example\nNew album: Saltwater Static, out on vinyl this winter.\nShows: Dec 6 The Blind Pig, Ann Arbor, MI; Dec 13 Magic Stick, Detroit, MI\n"
+   }
+  },
+  {
+   "name": "Framework · Svelte: another band",
+   "category": "f-trap",
+   "site": "eval/sites/own-svelte-band",
+   "expect": {
+    "forbidText": [
+     "Velvet Static"
+    ]
+   },
+   "writes": {
+    "sources/band-notes.md": "# The Low Tides - band notes\n\nBio: Four friends from Ypsilanti playing surf rock with too much reverb.\nBooking: booking@lowtides.example\nNew album: Saltwater Static, out on vinyl this winter.\nShows: Dec 6 The Blind Pig, Ann Arbor, MI; Dec 13 Pike Room, Pontiac, MI\n\nWe open for Velvet Static in January (their show, not ours to list).\n"
+   }
+  },
+  {
+   "name": "Framework · Svelte: rehearsal times",
+   "category": "f-ignore",
+   "site": "eval/sites/own-svelte-band",
+   "expect": {
+    "noProposals": true
+   },
+   "writes": {
+    "sources/band-notes.md": "# The Low Tides - band notes\n\nBio: Four friends from Ypsilanti playing surf rock with too much reverb.\nBooking: booking@lowtides.example\nNew album: Saltwater Static, out on vinyl this winter.\nShows: Dec 6 The Blind Pig, Ann Arbor, MI; Dec 13 Pike Room, Pontiac, MI\n\nRehearsal: Tuesdays 7 pm at Sam's garage.\n"
+   }
+  }
+ ]
+}

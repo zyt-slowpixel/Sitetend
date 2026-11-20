@@ -1,0 +1,3 @@
+Teaching
+Fall 2026: INFO 670 Applied Machine Learning for Information (instructor)
+Winter 2026: INFO 501 Contextual Inquiry (instructor)

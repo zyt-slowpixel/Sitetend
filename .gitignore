@@ -1,0 +1,18 @@
+node_modules/
+.env
+.env.*
+!.env.example
+.sitetend/
+.DS_Store
+Thumbs.db
+*.log
+eval/results/
+eval/runs/
+
+# local-only: Chinese documentation and notes stay on this computer; the repository is in English
+README.zh-CN.md
+docs/*.md
+_old_handoff/
+docs/archive/
+docs/TEST_TODO_WINDOWS.md
+__pycache__/

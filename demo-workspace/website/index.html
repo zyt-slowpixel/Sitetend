@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alex Morgan - Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="sk-edit-banner" class="sk-edit-banner hidden" aria-live="polite">
+    <span class="sk-dot"></span>
+    <span id="sk-banner-text">Sitetend draft preview: click any highlighted text to edit it</span>
+  </div>
+
+  <header class="site-header">
+    <div class="container nav-row">
+      <a href="#hero" class="brand-logo" data-sk-field="profile.name" id="nav-name">Alex Morgan</a>
+      <nav class="site-nav" aria-label="Primary Navigation">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#resume">Resume</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section container">
+      <div class="hero-copy">
+        <div class="status-pill" data-sk-field="profile.badge" id="hero-badge">
+          Demo Portfolio
+        </div>
+        <h1 class="hero-title">
+          <span data-sk-field="profile.name" id="hero-name">Alex Morgan</span> -
+          <span class="hero-role" data-sk-field="profile.role" id="hero-role">Product Designer &amp; AI Technologist</span>
+        </h1>
+        <p class="hero-tagline" data-sk-field="profile.tagline" id="hero-tagline"></p>
+        <div class="hero-actions">
+          <a href="#work" class="btn btn-primary">Explore Selected Work</a>
+          <a href="mailto:alex.morgan.demo@northfield.edu" class="btn btn-outline" id="hero-email-btn" data-sk-field="contact.email">
+            Get in Touch
+          </a>
+        </div>
+      </div>
+      <div class="hero-visual-wrap">
+        <div class="avatar-card" data-sk-field="profile.avatarUrl" id="hero-avatar" title="Click to change visual theme">
+          <div class="avatar-illustration" id="avatar-graphic"></div>
+          <span class="avatar-caption">Click in draft mode to switch visual style</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work / Projects Section -->
+    <section id="work" class="section container">
+      <div class="section-header">
+        <div>
+          <span class="eyebrow">Selected Projects</span>
+          <h2 class="section-title">Systems &amp; Research Artifacts</h2>
+        </div>
+        <div class="filter-bar" id="project-filters" role="tablist" aria-label="Project category filters">
+          <button type="button" class="filter-btn active" data-category="all">All</button>
+        </div>
+      </div>
+      <div class="projects-grid" id="projects-grid"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section container">
+      <div class="about-card">
+        <div class="about-main">
+          <span class="eyebrow">About</span>
+          <h2 class="section-title" data-sk-field="about.headline" id="about-headline"></h2>
+          <p class="about-summary" data-sk-field="about.summary" id="about-summary"></p>
+          <div class="location-line">
+            <strong>Base:</strong> <span data-sk-field="contact.location" id="about-location"></span>
+          </div>
+        </div>
+        <div class="about-side">
+          <h3 class="side-heading">Focus Areas &amp; Craft</h3>
+          <div class="tags-wrap" data-sk-field="about.focusAreas" id="about-focus-areas"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="section container">
+      <div class="resume-panel">
+        <div class="resume-header">
+          <div>
+            <span class="eyebrow">Curriculum Vitae</span>
+            <h2 class="section-title" data-sk-field="resume.headline" id="resume-headline"></h2>
+            <p class="resume-meta" data-sk-field="resume.updatedLabel" id="resume-updated"></p>
+          </div>
+          <div class="resume-actions">
+            <a href="assets/resume.pdf" download class="btn btn-primary" id="resume-download-link" data-sk-field="resume.downloadPath">
+              Download Resume (<span id="resume-path-text">assets/resume.pdf</span>)
+            </a>
+          </div>
+        </div>
+        <p class="resume-summary" data-sk-field="resume.summary" id="resume-summary"></p>
+        <div class="experience-list" id="resume-experience-list"></div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section container">
+      <div class="contact-box">
+        <span class="eyebrow">Contact</span>
+        <h2 class="section-title" data-sk-field="contact.headline" id="contact-headline"></h2>
+        <p class="contact-location">Currently based in <span data-sk-field="contact.location" id="contact-location"></span></p>
+        <div class="contact-links">
+          <a href="mailto:alex.morgan.demo@northfield.edu" class="contact-pill primary" id="contact-email-link" data-sk-field="contact.email"></a>
+          <a href="https://github.com/alexmorgan-demo" target="_blank" rel="noopener" class="contact-pill" id="contact-github-link" data-sk-field="contact.github">GitHub</a>
+          <a href="https://www.linkedin.com/in/alexmorgan-demo" target="_blank" rel="noopener" class="contact-pill" id="contact-linkedin-link" data-sk-field="contact.linkedin">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <div>
+        &copy; 2026 <span data-sk-field="profile.name" id="footer-name">Alex Morgan</span> · Demo portfolio kept up to date with Sitetend
+      </div>
+      <div class="footer-links">
+        <a href="mailto:alex.morgan.demo@northfield.edu" id="footer-email" data-sk-field="contact.email"></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Project Detail Modal -->
+  <div id="project-modal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-card">
+      <button type="button" class="modal-close" id="modal-close-btn" aria-label="Close project details">&times;</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+baseURL = "https://si999.example.edu/"
+title = "INFO 999: Data Storytelling"
+[params]
+instructor = "Prof. Nadia Rahman"
+office = "4401 North Quad, Wednesdays 1–3 pm"
+email = "si999-staff@lakeview.example.edu"
+term = "Winter 2027"

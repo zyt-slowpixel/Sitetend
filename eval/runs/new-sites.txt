@@ -1,0 +1,86 @@
+=== run 1, reviewer on: ext7 (AI builders, Angular, Flask, PHP) === 
+Model: U-M GPT Toolkit (gpt-5.6-terra)
+Sitetend eval · provider=openai-compatible:https://api.toolkit.umgpt.umich.edu/v1/chat/completions:gpt-5.6-terra · reviewer on · 30 cases
+
+PASS  [g-update] Lovable：搬家
+PASS  [g-update] Lovable：换工作
+PASS  [g-trap] Lovable：朋友的项目
+PASS  [g-update] Bolt：新职位
+PASS  [g-trap] Bolt：审稿邀请
+PASS  [g-ignore] Bolt：私事
+PASS  [g-update] Angular：多一门语言
+PASS  [g-trap] Angular：没定的 offer
+PASS  [g-ignore] Angular：待办
+PASS  [g-update] Flask：名字
+PASS  [g-update] Flask：新爱好
+PASS  [g-trap] Flask：朋友的消息
+PASS  [g-update] SvelteKit：新学位
+PASS  [g-update] SvelteKit：职位改名
+PASS  [g-ignore] SvelteKit：私事
+PASS  [g-update] Vite React：实习结束
+PASS  [g-trap] Vite React：同学的比赛
+PASS  [g-ignore] Vite React：私事
+PASS  [g-update] PHP：营业时间
+PASS  [g-update] PHP：换咖啡豆
+PASS  [g-trap] PHP：还没定的分店
+PASS  [g-update] 单页 HTML：换经纪公司
+PASS  [g-update] 单页 HTML：书名改了
+PASS  [g-trap] 单页 HTML：没公开的合同
+PASS  [g-update] Replit：升年级
+PASS  [g-update] Replit：项目更新
+PASS  [g-ignore] Replit：私事
+PASS  [g-update] v0：开放日改时间
+PASS  [g-update] v0：搬工作室
+PASS  [g-trap] v0：客户私事
+
+[ext7] 30/30
+
+g-update: 17/17   g-trap: 8/8   g-ignore: 5/5
+模型调用 59 次 · token：输入 300,763 + 输出 7,882 = 308,645
+总计 30/30 通过
+结果已写入 C:\Users\17152\Desktop\sitekeeper\eval\results\2026-11-13T18-11-48-316Z.json
+ 
+=== run 2, reviewer on: ext7 === 
+Model: U-M GPT Toolkit (gpt-5.6-terra)
+Sitetend eval · provider=openai-compatible:https://api.toolkit.umgpt.umich.edu/v1/chat/completions:gpt-5.6-terra · reviewer on · 30 cases
+
+PASS  [g-update] Lovable：搬家
+PASS  [g-update] Lovable：换工作
+PASS  [g-trap] Lovable：朋友的项目
+PASS  [g-update] Bolt：新职位
+PASS  [g-trap] Bolt：审稿邀请
+PASS  [g-ignore] Bolt：私事
+PASS  [g-update] Angular：多一门语言
+PASS  [g-trap] Angular：没定的 offer
+PASS  [g-ignore] Angular：待办
+PASS  [g-update] Flask：名字
+FAIL  [g-update] Flask：新爱好
+      缺少建议 app/static/user-template.json::str.25
+      缺少建议 app/static/user-template.json::str.25
+PASS  [g-trap] Flask：朋友的消息
+PASS  [g-update] SvelteKit：新学位
+PASS  [g-update] SvelteKit：职位改名
+PASS  [g-ignore] SvelteKit：私事
+PASS  [g-update] Vite React：实习结束
+PASS  [g-trap] Vite React：同学的比赛
+PASS  [g-ignore] Vite React：私事
+PASS  [g-update] PHP：营业时间  (⚠ index.php::php.str.2)
+PASS  [g-update] PHP：换咖啡豆
+PASS  [g-trap] PHP：还没定的分店
+PASS  [g-update] 单页 HTML：换经纪公司
+PASS  [g-update] 单页 HTML：书名改了
+PASS  [g-trap] 单页 HTML：没公开的合同
+PASS  [g-update] Replit：升年级
+PASS  [g-update] Replit：项目更新
+PASS  [g-ignore] Replit：私事
+PASS  [g-update] v0：开放日改时间
+PASS  [g-update] v0：搬工作室
+PASS  [g-trap] v0：客户私事
+
+[ext7] 29/30
+
+g-update: 16/17   g-trap: 8/8   g-ignore: 5/5
+模型调用 58 次 · token：输入 299,884 + 输出 7,490 = 307,374
+总计 29/30 通过
+结果已写入 C:\Users\17152\Desktop\sitekeeper\eval\results\2026-11-13T18-13-54-714Z.json
+=== done === 

@@ -1,0 +1,6 @@
+{
+  "name": "tomas-ito-portfolio",
+  "private": true,
+  "scripts": { "build": "npx @11ty/eleventy", "start": "npx @11ty/eleventy --serve" },
+  "devDependencies": { "@11ty/eleventy": "^3.1.0" }
+}

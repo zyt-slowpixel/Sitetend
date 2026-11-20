@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<link rel="icon" type="image/png" href="/ui/assets/sitetend.png">
+<script>try{var m=localStorage.getItem("sitetend.theme")||"system";document.documentElement.dataset.theme=m==="system"?(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"):m}catch(e){}</script>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sitetend</title>
+<link rel="stylesheet" href="/ui/app.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <span class="logo">Sitetend</span>
+    <div class="menu-wrap" id="site-wrap" hidden>
+      <button id="site-btn" class="conn site-btn" aria-haspopup="true" aria-expanded="false"><span id="site-label"> - </span><span class="caret" data-icon="chevron-down" data-icon-size="14"></span></button>
+      <div id="site-menu" class="popover" hidden></div>
+    </div>
+    <div class="menu-wrap">
+      <button id="conn" class="conn" aria-haspopup="true" aria-expanded="false"><span class="dot" id="conn-dot"></span><span id="conn-label"> - </span><span class="caret" data-icon="chevron-down" data-icon-size="14"></span></button>
+      <div id="conn-menu" class="popover" hidden></div>
+    </div>
+  </div>
+  <nav class="actions" id="actions">
+    <nav id="welcome-lang" class="lang-pick" aria-label="Language"></nav>
+    <button id="settings" class="icon" data-icon="gear" data-icon-size="20" data-i18n-title="settings"></button>
+  </nav>
+</header>
+<div id="banner" class="banner" hidden></div>
+<div id="status" class="toast" role="status" aria-live="polite"></div>
+
+<main id="welcome" class="welcome" hidden>
+  <div class="intro" aria-hidden="true">
+    <div class="scene">
+      <div class="intro-drop"><span data-icon="upload" data-icon-size="30"></span></div>
+      <div class="doc">
+        <div class="doc-name">resume.pdf</div>
+        <i class="ln w80"></i><i class="ln w60"></i>
+        <div class="ln-new"><b>Orbit Dock</b> v1.6</div>
+        <i class="ln w70"></i><i class="ln w50"></i>
+      </div>
+      <div class="flow f1"><span></span></div>
+      <div class="sug">
+        <div class="sug-t">Orbit Dock</div>
+        <div class="sug-r"><s>v1.4</s><em>v1.6</em></div>
+        <div class="sug-btns">
+          <span class="b-acc" data-i18n="accept"></span><span class="b-rej" data-i18n="reject"></span>
+          <span class="cursor"><span class="ripple"></span><svg viewBox="0 0 24 24" width="24" height="24"><path d="M5.5 3.2v16.3l4.1-3.9 2.7 6 2.6-1.1-2.6-5.9H18z" fill="#111" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
+        </div>
+        <div class="sug-ok">✓</div>
+      </div>
+      <div class="flow f2"><span></span></div>
+      <div class="site">
+        <div class="site-bar"><i></i><i></i><i></i></div>
+        <div class="site-card"><div class="thumb"></div><div class="site-t">Orbit Dock</div><div class="site-v"><span class="old">v1.4</span><span class="new">v1.6</span></div></div>
+        <div class="site-card dim"><div class="thumb t2"></div><i class="ln w70"></i><i class="ln w50"></i></div>
+      </div>
+    </div>
+  </div>
+  <h1 data-i18n="welcome.title"></h1>
+  <ol class="steps">
+    <li><span class="num">1</span><span data-i18n="welcome.step1"></span></li>
+    <li><span class="num">2</span><span data-i18n="welcome.step2"></span></li>
+    <li><span class="num">3</span><span data-i18n="welcome.step3"></span></li>
+  </ol>
+  <p class="hint" data-i18n="welcome.hint"></p>
+  <div class="welcome-actions"><button id="browse" class="primary big" data-i18n="welcome.browse"></button><button id="open-demo" class="big" data-i18n="welcome.demo"></button><button id="site-help" class="icon help-q" data-icon="help-circle" data-icon-size="20" data-i18n-title="help.btn"></button></div>
+  <div id="recent" class="recent"></div>
+  <form id="open-form" class="open-form">
+    <label for="open-path" data-i18n="welcome.folder"></label>
+    <div class="row"><input id="open-path" placeholder="/home/you/my-site"><button data-i18n="welcome.open"></button></div>
+  </form>
+  <p id="welcome-shortcut" class="welcome-shortcut" hidden></p>
+</main>
+
+<main id="app" class="app" hidden>
+  <section class="panel">
+   <div class="panel-body">
+    <div class="panel-head">
+      <div class="seg panel-tabs" role="tablist">
+        <button id="tab-sugg" role="tab" aria-pressed="true"><span data-i18n="suggestions"></span><span id="tab-count" class="tab-count"></span></button>
+        <button id="tab-history" role="tab" aria-pressed="false" data-i18n="history"></button>
+      </div>
+      <div class="panel-tools"><button id="check" class="small-btn" data-i18n="check"></button></div>
+    </div>
+    <div id="materials" class="materials"></div>
+    <div id="bulk"></div>
+    <div id="cards"></div>
+    <div id="history" class="history" hidden></div>
+   </div>
+    <div id="split-y" class="splitter-y" role="separator" aria-orientation="horizontal" tabindex="0" data-i18n-title="split.dragChat"></div>
+    <div class="chat" id="chat">
+      <div class="chat-head"><span data-i18n="chat.title"></span><button id="chat-clear" class="link small" data-i18n="chat.clear" hidden></button></div>
+      <div id="chat-log" class="chat-log"></div>
+      <form id="chat-form" class="chat-form">
+        <textarea id="chat-input" rows="1" data-i18n-placeholder="chat.placeholder"></textarea>
+        <span id="chat-usage" class="muted"></span>
+        <button id="chat-send" class="primary" data-i18n="chat.send"></button>
+      </form>
+    </div>
+  </section>
+  <div id="split-x" class="splitter" role="separator" aria-orientation="vertical" tabindex="0" data-i18n-title="split.drag"></div>
+  <section class="preview">
+    <div class="preview-head">
+     <div class="tools">
+      <div class="seg"><button id="w-desktop" aria-pressed="true" data-i18n="preview.desktop"></button><button id="w-phone" aria-pressed="false" data-i18n="preview.phone"></button></div>
+      <button id="edit-toggle" class="toggle" aria-pressed="false" data-i18n="editText"></button>
+      <div id="compare" class="seg" hidden><button id="v-proposed" data-i18n="view.proposed"></button><button id="v-original" data-i18n="view.original"></button><button id="v-split" data-i18n="view.split"></button></div>
+      <div class="zoom"><button id="zoom-out" class="icon" data-icon="minus" data-i18n-title="zoom.out"></button><button id="zoom-fit" class="zoom-val" data-i18n-title="zoom.fit"></button><button id="zoom-in" class="icon" data-icon="plus" data-i18n-title="zoom.in"></button></div>
+     </div>
+     <div class="tools site-actions">
+      <span id="build-status" class="build-status" role="status" aria-live="polite" hidden></span>
+      <button id="undo" class="icon" data-icon="undo" data-i18n-title="undo"></button>
+      <button id="redo" class="icon" data-icon="redo" data-i18n-title="redo"></button>
+      <span id="pub-label" class="muted pub-label"></span>
+      <button id="publish" class="primary" data-i18n="publish"></button>
+      <div class="menu-wrap"><button id="pub-more" class="icon" aria-haspopup="true" aria-expanded="false" data-icon="more" data-i18n-title="publish.more"></button><div id="pub-menu" class="popover right" hidden></div></div>
+     </div>
+    </div>
+    <div id="frames" class="frame-wrap">
+      <figure class="pane"><figcaption id="cap-a"></figcaption><div class="pane-tools"><select id="page-pick" class="page-pick" hidden></select><a id="open-live" class="open-live" target="_blank" rel="noopener" hidden></a></div><div id="script-note" class="script-note" role="status" hidden></div><div class="viewport"><div class="stage"><iframe id="preview" title="Website preview" sandbox="allow-scripts allow-downloads allow-popups"></iframe></div></div></figure>
+      <figure class="pane" id="pane-b" hidden><figcaption id="cap-b"></figcaption><div class="viewport"><div class="stage"><iframe id="preview-b" title="Original website" sandbox="allow-scripts allow-downloads allow-popups"></iframe></div></div></figure>
+    </div>
+  </section>
+</main>
+
+<dialog id="edit-dialog" class="edit-dialog">
+  <form method="dialog" id="edit-form">
+    <label id="edit-label" for="edit-input"></label>
+    <textarea id="edit-input" rows="3"></textarea>
+    <div class="btns"><button value="save" class="primary" data-i18n="save"></button><button value="cancel" data-i18n="cancel"></button></div>
+  </form>
+</dialog>
+<div id="scrim" class="scrim" hidden></div>
+<div id="dropzone" class="dropzone" hidden><div data-i18n="mat.dropHere"></div></div>
+<input id="mat-file" type="file" multiple accept=".pdf,.docx,.md,.markdown,.txt,.json" hidden>
+<aside id="drawer" class="drawer" hidden>
+  <div class="drawer-head"><h2 class="with-icon"><span data-icon="gear" data-icon-size="20"></span><span data-i18n="settings"></span></h2></div>
+  <div id="drawer-body"></div>
+</aside>
+<!-- Close sits exactly where the ⚙ that opened the panel is: same spot, same size (placed by app.js). -->
+<button id="close-drawer" class="icon drawer-close" hidden data-icon="x" data-icon-size="20" data-i18n-title="close"></button>
+<aside id="drawer-adv" class="drawer drawer-adv" hidden>
+  <div class="drawer-head"><h2 data-i18n="settings.advanced"></h2></div>
+  <div id="drawer-adv-body"></div>
+</aside>
+<button id="adv-collapse" class="adv-collapse" hidden data-icon="chevron-right" data-icon-size="20" data-i18n-title="settings.advanced.hide"></button>
+
+<script type="module" src="/ui/app.js"></script>
+</body>
+</html>

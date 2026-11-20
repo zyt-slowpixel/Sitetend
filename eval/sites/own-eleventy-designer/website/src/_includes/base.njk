@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{ title }} · {{ site.name }}</title>
+  <link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+  <header>
+    <a href="/" class="name">{{ site.name }}</a>
+    <nav><a href="/work/">Work</a> <a href="/about/">About</a></nav>
+  </header>
+  <main>{{ content | safe }}</main>
+  <footer>
+    <p>Currently open to full-time roles in health tech.</p>
+    <p>{{ site.email }}</p>
+  </footer>
+</body>
+</html>

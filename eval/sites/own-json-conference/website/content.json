@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "siteAdapter": "json-generic",
+  "event": {
+    "name": "HCI Futures Symposium 2027",
+    "dates": "April 14–16, 2027",
+    "venue": "Hillside Hall",
+    "city": "Ann Arbor, Michigan",
+    "contactEmail": "chairs@hcifutures.example",
+    "registrationUrl": "https://hcifutures.example/register"
+  },
+  "deadlines": {
+    "papers": "Full papers due December 5, 2026",
+    "posters": "Posters due January 30, 2027",
+    "registration": "Early registration ends March 1, 2027"
+  },
+  "keynotes": [
+    {
+      "id": "k1",
+      "name": "Dr. Amara Okafor",
+      "affiliation": "Northfield University",
+      "talkTitle": "Designing for Disagreement"
+    },
+    {
+      "id": "k2",
+      "name": "Prof. Kenji Watanabe",
+      "affiliation": "Lakeshore Institute of Technology",
+      "talkTitle": "Machines That Ask Before They Act"
+    }
+  ],
+  "committee": [
+    "Laura Benson (General Chair)",
+    "Marco Silva (Program Chair)"
+  ]
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marisol Vega | Illustrator</title>
+<style>
+  body { font-family: system-ui, sans-serif; margin: 0; background: #fffaf3; color: #2b2118; }
+  header { padding: 4rem 2rem 2rem; text-align: center; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; padding: 2rem; }
+  .card { background: #fff; border-radius: 12px; padding: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,.08); }
+</style>
+</head>
+<body>
+<header>
+  <h1>Marisol Vega</h1>
+  <p class="tagline">Children's book illustrator based in Albuquerque, New Mexico.</p>
+  <a class="btn" href="mailto:marisol@vega-draws.example">Commission a piece</a>
+</header>
+<section id="work">
+  <h2>Selected books</h2>
+  <div class="grid" id="books"></div>
+</section>
+<section id="about">
+  <h2>About</h2>
+  <p>I paint with gouache and finish everything by hand. My books have been translated into six languages.</p>
+</section>
+<footer><p>Represented by Brightline Literary Agency.</p></footer>
+<script>
+  const books = [
+    { title: "The Moth Who Loved the Moon", publisher: "Pinecone Press", year: "2025", blurb: "A bedtime story about patience and light." },
+    { title: "Abuela's Kitchen Garden", publisher: "Little Harbor Books", year: "2023", blurb: "Three generations grow chiles together." },
+    { title: "Pip Finds a Home", publisher: "Pinecone Press", year: "2021", blurb: "A lost hermit crab tries on every shell." }
+  ];
+  const grid = document.getElementById("books");
+  books.forEach(b => {
+    const card = document.createElement("div");
+    card.className = "card";
+    card.innerHTML = `<h3>${b.title}</h3><p>${b.publisher}, ${b.year}</p><p>${b.blurb}</p>`;
+    grid.appendChild(card);
+  });
+</script>
+</body>
+</html>

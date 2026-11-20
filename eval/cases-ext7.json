@@ -1,0 +1,427 @@
+{
+ "version": 1,
+ "heldOut": true,
+ "note": "Sites made by AI builders and chat assistants. Written before any model run; report only.",
+ "cases": [
+  {
+   "name": "Lovable: moved",
+   "category": "g-update",
+   "site": "eval/sites/ext7-lovable-glowfolio",
+   "expect": {
+    "contains": {
+     "~Roorkee, India": [
+      "Bengaluru"
+     ]
+    }
+   },
+   "writes": {
+    "sources/me.md": "# Harshit - notes\n\nJob: software developer at C.C.N\nLocation: Bengaluru, India (moved in 2026)\n"
+   }
+  },
+  {
+   "name": "Lovable: new job",
+   "category": "g-update",
+   "site": "eval/sites/ext7-lovable-glowfolio",
+   "expect": {
+    "contains": {
+     "~Currently working at C.C.N": [
+      "Razorpay"
+     ]
+    }
+   },
+   "writes": {
+    "sources/me.md": "# Harshit - notes\n\nJob: software developer at Razorpay (left C.C.N in September 2026)\nLocation: Roorkee, India\n"
+   }
+  },
+  {
+   "name": "Lovable: a friend's project",
+   "category": "g-trap",
+   "site": "eval/sites/ext7-lovable-glowfolio",
+   "expect": {
+    "forbidText": [
+     "TrailMix"
+    ]
+   },
+   "writes": {
+    "sources/me.md": "# Harshit - notes\n\nJob: software developer at C.C.N\nLocation: Roorkee, India\n\nMy roommate is building an app called TrailMix.\n"
+   }
+  },
+  {
+   "name": "Bolt: new role",
+   "category": "g-update",
+   "site": "eval/sites/ext7-bolt-personal",
+   "expect": {
+    "contains": {
+     "~Jibanul Haque - AI Researcher": [
+      "Research Scientist"
+     ]
+    }
+   },
+   "writes": {
+    "sources/cv.md": "# Jibanul Haque - CV\n\nCurrent role: Research Scientist at Toyota Research Institute (PhD in Computer Vision)\n"
+   }
+  },
+  {
+   "name": "Bolt: review invitation",
+   "category": "g-trap",
+   "site": "eval/sites/ext7-bolt-personal",
+   "expect": {
+    "forbidText": [
+     "CVPR 2027"
+    ]
+   },
+   "writes": {
+    "sources/cv.md": "# Jibanul Haque - CV\n\nCurrent role: AI Researcher (PhD in Computer Vision)\n\nInvited to review for CVPR 2027 (confidential until the program is out).\n"
+   }
+  },
+  {
+   "name": "Bolt: private matter",
+   "category": "g-ignore",
+   "site": "eval/sites/ext7-bolt-personal",
+   "expect": {
+    "noProposals": true
+   },
+   "writes": {
+    "sources/cv.md": "# Jibanul Haque - CV\n\nCurrent role: AI Researcher (PhD in Computer Vision)\n\nPick up dry cleaning on Friday.\n"
+   }
+  },
+  {
+   "name": "Angular: one more language",
+   "category": "g-update",
+   "site": "eval/sites/ext7-angular-portfolio",
+   "expect": {
+    "contains": {
+     "~I am a Software Developer from Brazil": [
+      "German"
+     ]
+    }
+   },
+   "writes": {
+    "sources/profile.md": "# Barbara Calderon - profile\n\nFrom: Brazil\nLanguages: Portuguese (native), English (fluent), German (intermediate, since 2026)\n"
+   }
+  },
+  {
+   "name": "Angular: an offer not decided yet",
+   "category": "g-trap",
+   "site": "eval/sites/ext7-angular-portfolio",
+   "expect": {
+    "forbidText": [
+     "Nubank"
+    ]
+   },
+   "writes": {
+    "sources/profile.md": "# Barbara Calderon - profile\n\nFrom: Brazil\nLanguages: Portuguese (native), English (fluent)\n\nGot to the final round at Nubank, waiting to hear back.\n"
+   }
+  },
+  {
+   "name": "Angular: to-do",
+   "category": "g-ignore",
+   "site": "eval/sites/ext7-angular-portfolio",
+   "expect": {
+    "noProposals": true
+   },
+   "writes": {
+    "sources/profile.md": "# Barbara Calderon - profile\n\nFrom: Brazil\nLanguages: Portuguese (native), English (fluent)\n\nTODO: renew passport.\n"
+   }
+  },
+  {
+   "name": "Flask: name",
+   "category": "g-update",
+   "site": "eval/sites/ext7-flask-mlh",
+   "expect": {
+    "contains": {
+     "~John Doe": [
+      "Aisha Bello"
+     ]
+    }
+   },
+   "writes": {
+    "sources/about-me.md": "# About me\n\nName: Aisha Bello\nHobbies: Reading, Writing, Drawing\n"
+   }
+  },
+  {
+   "name": "Flask: new hobby",
+   "category": "g-update",
+   "site": "eval/sites/ext7-flask-mlh",
+   "expect": {
+    "fieldsAny": [
+     "~Drawing"
+    ],
+    "contains": {
+     "~Drawing": [
+      "Pottery"
+     ]
+    }
+   },
+   "writes": {
+    "sources/about-me.md": "# About me\n\nName: John Doe\nHobbies: Reading, Writing, Pottery (stopped drawing)\n"
+   }
+  },
+  {
+   "name": "Flask: a friend's news",
+   "category": "g-trap",
+   "site": "eval/sites/ext7-flask-mlh",
+   "expect": {
+    "forbidText": [
+     "Google"
+    ]
+   },
+   "writes": {
+    "sources/about-me.md": "# About me\n\nName: John Doe\nHobbies: Reading, Writing, Drawing\n\nMy friend Tomi just got an internship at Google.\n"
+   }
+  },
+  {
+   "name": "SvelteKit: new degree",
+   "category": "g-update",
+   "site": "eval/sites/ext7-sveltekit-slick",
+   "expect": {
+    "contains": {
+     "~Bachelor degree of Computer Science": [
+      "Master"
+     ]
+    },
+    "fieldsAny": [
+     "~Bachelor degree of Computer Science"
+    ]
+   },
+   "writes": {
+    "sources/resume.md": "# Riadh Adrani - resume\n\nEducation: Master's degree of Computer Science (ISTIC, Tunisia, 2026; replaces the bachelor entry); PhD of Computer Science (MIT, USA)\nWork: Open Source Developer (self-employed), Freelancer\n"
+   }
+  },
+  {
+   "name": "SvelteKit: role renamed",
+   "category": "g-update",
+   "site": "eval/sites/ext7-sveltekit-slick",
+   "expect": {
+    "contains": {
+     "~Open Source Developer": [
+      "Maintainer"
+     ]
+    }
+   },
+   "writes": {
+    "sources/resume.md": "# Riadh Adrani - resume\n\nEducation: Bachelor degree of Computer Science (ISTIC, Tunisia); PhD of Computer Science (MIT, USA)\nWork: Open Source Maintainer (self-employed, renamed in 2026), Freelancer\n"
+   }
+  },
+  {
+   "name": "SvelteKit: private matter",
+   "category": "g-ignore",
+   "site": "eval/sites/ext7-sveltekit-slick",
+   "expect": {
+    "noProposals": true
+   },
+   "writes": {
+    "sources/resume.md": "# Riadh Adrani - resume\n\nEducation: Bachelor degree of Computer Science (ISTIC, Tunisia); PhD of Computer Science (MIT, USA)\nWork: Open Source Developer (self-employed), Freelancer\n\nCall the bank about the card.\n"
+   }
+  },
+  {
+   "name": "Vite React: internship ended",
+   "category": "g-update",
+   "site": "eval/sites/ext7-vite-react",
+   "expect": {
+    "contains": {
+     "~January 2026 - Present": [
+      "August 2026"
+     ]
+    }
+   },
+   "writes": {
+    "sources/notes.md": "# Brian Velazquez - notes\n\nSchool: software engineering student at FGCU\nInternship: IT Intern - Bonita Springs Utilities (January 2026 - August 2026, finished)\n"
+   }
+  },
+  {
+   "name": "Vite React: a classmate's competition",
+   "category": "g-trap",
+   "site": "eval/sites/ext7-vite-react",
+   "expect": {
+    "forbidText": [
+     "HackFGCU"
+    ]
+   },
+   "writes": {
+    "sources/notes.md": "# Brian Velazquez - notes\n\nSchool: software engineering student at FGCU\nInternship: IT Intern - Bonita Springs Utilities (January 2026 - Present)\n\nMy classmate Diego won HackFGCU this year.\n"
+   }
+  },
+  {
+   "name": "Vite React: private matter",
+   "category": "g-ignore",
+   "site": "eval/sites/ext7-vite-react",
+   "expect": {
+    "noProposals": true
+   },
+   "writes": {
+    "sources/notes.md": "# Brian Velazquez - notes\n\nSchool: software engineering student at FGCU\nInternship: IT Intern - Bonita Springs Utilities (January 2026 - Present)\n\nGym at 6am tomorrow.\n"
+   }
+  },
+  {
+   "name": "PHP: opening hours",
+   "category": "g-update",
+   "site": "eval/sites/own-php-cafe",
+   "expect": {
+    "contains": {
+     "~Open Tuesday to Sunday, 7am to 3pm": [
+      "4pm"
+     ]
+    }
+   },
+   "writes": {
+    "sources/cafe-notes.md": "# Little Fern Café - notes\n\nHours: Tuesday to Sunday, 7am to 4pm (from November)\nCoffee: Roasted by Ruth Roasters in Detroit\nAddress: 214 West Cross Street, Ypsilanti, MI 48197\n"
+   }
+  },
+  {
+   "name": "PHP: new coffee beans",
+   "category": "g-update",
+   "site": "eval/sites/own-php-cafe",
+   "expect": {
+    "contains": {
+     "~Roasted by Ruth Roasters": [
+      "Great Lakes"
+     ]
+    }
+   },
+   "writes": {
+    "sources/cafe-notes.md": "# Little Fern Café - notes\n\nHours: Tuesday to Sunday, 7am to 3pm\nCoffee: Roasted by Great Lakes Coffee in Detroit (switched from Ruth Roasters)\nAddress: 214 West Cross Street, Ypsilanti, MI 48197\n"
+   }
+  },
+  {
+   "name": "PHP: a branch not decided yet",
+   "category": "g-trap",
+   "site": "eval/sites/own-php-cafe",
+   "expect": {
+    "forbidText": [
+     "Ann Arbor"
+    ]
+   },
+   "writes": {
+    "sources/cafe-notes.md": "# Little Fern Café - notes\n\nHours: Tuesday to Sunday, 7am to 3pm\nCoffee: Roasted by Ruth Roasters in Detroit\nAddress: 214 West Cross Street, Ypsilanti, MI 48197\n\nThinking about a second location in Ann Arbor, nothing signed.\n"
+   }
+  },
+  {
+   "name": "Single-page HTML: new agency",
+   "category": "g-update",
+   "site": "eval/sites/own-chatgpt-single",
+   "expect": {
+    "contains": {
+     "~Represented by Brightline": [
+      "Northstar"
+     ]
+    }
+   },
+   "writes": {
+    "sources/books.md": "# Marisol Vega - books\n\nBase: Albuquerque, New Mexico\nAgency: Northstar Literary (left Brightline in 2026)\nBooks:\n- The Moth Who Loved the Moon (Pinecone Press, 2025)\n- Abuela's Kitchen Garden (Little Harbor Books, 2023)\n- Pip Finds a Home (Pinecone Press, 2021)\n"
+   }
+  },
+  {
+   "name": "Single-page HTML: book title changed",
+   "category": "g-update",
+   "site": "eval/sites/own-chatgpt-single",
+   "expect": {
+    "contains": {
+     "~The Moth Who Loved the Moon": [
+      "Moonlight Moth"
+     ]
+    }
+   },
+   "writes": {
+    "sources/books.md": "# Marisol Vega - books\n\nBase: Albuquerque, New Mexico\nAgency: Brightline Literary Agency\nBooks:\n- The Moonlight Moth (Pinecone Press, 2025; retitled for the paperback)\n- Abuela's Kitchen Garden (Little Harbor Books, 2023)\n- Pip Finds a Home (Pinecone Press, 2021)\n"
+   }
+  },
+  {
+   "name": "Single-page HTML: an unannounced contract",
+   "category": "g-trap",
+   "site": "eval/sites/own-chatgpt-single",
+   "expect": {
+    "forbidText": [
+     "Scholastic"
+    ]
+   },
+   "writes": {
+    "sources/books.md": "# Marisol Vega - books\n\nBase: Albuquerque, New Mexico\nAgency: Brightline Literary Agency\nBooks:\n- The Moth Who Loved the Moon (Pinecone Press, 2025)\n- Abuela's Kitchen Garden (Little Harbor Books, 2023)\n- Pip Finds a Home (Pinecone Press, 2021)\n\nSigned with Scholastic for a new series (under embargo until March).\n"
+   }
+  },
+  {
+   "name": "Replit: moved up a year",
+   "category": "g-update",
+   "site": "eval/sites/own-replit-fullstack",
+   "expect": {
+    "contains": {
+     "~Junior at Wayne State": [
+      "Senior"
+     ]
+    }
+   },
+   "writes": {
+    "sources/me.md": "# Dev Okafor\n\nSchool: senior at Wayne State, Computer Science\nProjects: Corner Store Inventory; Bus Buddy (text alerts when the DDOT bus is five minutes away)\n"
+   }
+  },
+  {
+   "name": "Replit: project update",
+   "category": "g-update",
+   "site": "eval/sites/own-replit-fullstack",
+   "expect": {
+    "contains": {
+     "~Text alerts when the DDOT bus": [
+      "ten minutes"
+     ]
+    }
+   },
+   "writes": {
+    "sources/me.md": "# Dev Okafor\n\nSchool: junior at Wayne State, Computer Science\nProjects: Corner Store Inventory; Bus Buddy (text alerts when the DDOT bus is ten minutes away, changed after rider feedback)\n"
+   }
+  },
+  {
+   "name": "Replit: private matter",
+   "category": "g-ignore",
+   "site": "eval/sites/own-replit-fullstack",
+   "expect": {
+    "noProposals": true
+   },
+   "writes": {
+    "sources/me.md": "# Dev Okafor\n\nSchool: junior at Wayne State, Computer Science\nProjects: Corner Store Inventory; Bus Buddy (text alerts when the DDOT bus is five minutes away)\n\nDentist next Tuesday.\n"
+   }
+  },
+  {
+   "name": "v0: open day moved",
+   "category": "g-update",
+   "site": "eval/sites/own-v0-studio",
+   "expect": {
+    "contains": {
+     "~Open studio every first Saturday": [
+      "Sunday"
+     ]
+    }
+   },
+   "writes": {
+    "sources/studio.md": "# Hana Sato Ceramics - studio notes\n\nStudio: Portland, Oregon\nOpen studio: every first Sunday, 11am to 5pm (from December)\n"
+   }
+  },
+  {
+   "name": "v0: studio moved",
+   "category": "g-update",
+   "site": "eval/sites/own-v0-studio",
+   "expect": {
+    "contains": {
+     "~small studio in Portland, Oregon": [
+      "Seattle"
+     ]
+    }
+   },
+   "writes": {
+    "sources/studio.md": "# Hana Sato Ceramics - studio notes\n\nStudio: Seattle, Washington (moved in October 2026)\nOpen studio: every first Saturday, 10am to 4pm\n"
+   }
+  },
+  {
+   "name": "v0: a client's private matter",
+   "category": "g-trap",
+   "site": "eval/sites/own-v0-studio",
+   "expect": {
+    "forbidText": [
+     "wedding"
+    ]
+   },
+   "writes": {
+    "sources/studio.md": "# Hana Sato Ceramics - studio notes\n\nStudio: Portland, Oregon\nOpen studio: every first Saturday, 10am to 4pm\n\nPrivate order: 120 cups for the Nakamura wedding, do not post.\n"
+   }
+  }
+ ]
+}

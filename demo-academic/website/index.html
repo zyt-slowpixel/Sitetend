@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Academic homepage (Sitetend demo 2)</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="wrap">
+    <h1 data-sk-field="person.fullName" id="name"></h1>
+    <p class="pos"><span data-sk-field="person.position" id="position"></span><br><span data-sk-field="person.department" id="department"></span></p>
+    <p class="meta"><a id="email-link" data-sk-field="person.emailAddress"></a> · <a id="scholar-link" data-sk-field="person.scholarProfile">Google Scholar</a></p>
+    <p class="meta" data-sk-field="person.office" id="office"></p>
+  </div>
+</header>
+<main class="wrap">
+  <section><h2>About</h2><p data-sk-field="person.bio" id="bio"></p><ul class="chips" data-sk-field="researchInterests" id="interests"></ul></section>
+  <section><h2>News</h2><ul class="news" id="news"></ul></section>
+  <section><h2>Publications</h2><ol class="pubs" id="pubs"></ol></section>
+  <section><h2>Teaching</h2><ul class="teach" id="teaching"></ul></section>
+  <section><h2 data-sk-field="lab.name" id="lab-name"></h2><p data-sk-field="lab.recruiting" id="recruiting"></p><ul class="chips" data-sk-field="lab.members" id="members"></ul></section>
+  <section><h2>CV</h2><p data-sk-field="cv.lastRevised" id="cv-rev"></p></section>
+</main>
+<footer class="wrap foot">Fictional academic homepage for Sitetend testing only.</footer>
+<script src="app.js"></script>
+</body>
+</html>

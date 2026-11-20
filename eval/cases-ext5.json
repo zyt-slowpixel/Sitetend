@@ -1,0 +1,293 @@
+{
+ "version": 1,
+ "heldOut": true,
+ "note": "Hexo and Eleventy sites. Written before any model run; report only.",
+ "cases": [
+  {
+   "name": "Hexo · official template: site name",
+   "category": "g-update",
+   "site": "eval/sites/ext5-hexo-starter",
+   "expect": {
+    "contains": {
+     "~Hexo": [
+      "Notes from the Workshop"
+     ]
+    },
+    "onlyFields": [
+     "~Hexo"
+    ]
+   },
+   "writes": {
+    "sources/me.md": "# About me\n\nName: John Doe\nSite name: Notes from the Workshop\n"
+   }
+  },
+  {
+   "name": "Hexo · official template: author name",
+   "category": "g-update",
+   "site": "eval/sites/ext5-hexo-starter",
+   "expect": {
+    "contains": {
+     "~John Doe": [
+      "Maya Chen"
+     ]
+    }
+   },
+   "writes": {
+    "sources/me.md": "# About me\n\nName: Maya Chen\nSite name: Hexo\n"
+   }
+  },
+  {
+   "name": "Hexo · official template: a friend's blog",
+   "category": "g-trap",
+   "site": "eval/sites/ext5-hexo-starter",
+   "expect": {
+    "forbidText": [
+     "Riverbank"
+    ]
+   },
+   "writes": {
+    "sources/me.md": "# About me\n\nName: John Doe\nSite name: Hexo\n\nMy friend just started a blog called Riverbank Notes.\n"
+   }
+  },
+  {
+   "name": "Hexo · official template: private matter",
+   "category": "g-ignore",
+   "site": "eval/sites/ext5-hexo-starter",
+   "expect": {
+    "noProposals": true
+   },
+   "writes": {
+    "sources/me.md": "# About me\n\nName: John Doe\nSite name: Hexo\n\nDentist on Friday at 9.\n"
+   }
+  },
+  {
+   "name": "Eleventy · official template: name",
+   "category": "g-update",
+   "site": "eval/sites/ext5-eleventy-baseblog",
+   "expect": {
+    "contains": {
+     "~Your Name Here": [
+      "Ana Ruiz"
+     ]
+    }
+   },
+   "writes": {
+    "sources/profile.md": "# Profile\n\nName: Ana Ruiz\nEmail: youremailaddress@example.com\nBlog tagline: I am writing about my experiences as a naval navel-gazer.\nAbout me: I am a person that writes stuff.\n"
+   }
+  },
+  {
+   "name": "Eleventy · official template: email",
+   "category": "g-update",
+   "site": "eval/sites/ext5-eleventy-baseblog",
+   "expect": {
+    "contains": {
+     "~youremailaddress@example.com": [
+      "ana@ruiz.example"
+     ]
+    }
+   },
+   "writes": {
+    "sources/profile.md": "# Profile\n\nName: Your Name Here\nEmail: ana@ruiz.example\nBlog tagline: I am writing about my experiences as a naval navel-gazer.\nAbout me: I am a person that writes stuff.\n"
+   }
+  },
+  {
+   "name": "Eleventy · official template: about me",
+   "category": "g-update",
+   "site": "eval/sites/ext5-eleventy-baseblog",
+   "expect": {
+    "contains": {
+     "~I am a person that writes stuff": [
+      "bread"
+     ]
+    }
+   },
+   "writes": {
+    "sources/profile.md": "# Profile\n\nName: Your Name Here\nEmail: youremailaddress@example.com\nBlog tagline: I am writing about my experiences as a naval navel-gazer.\nAbout me: I bake bread and write about it.\n"
+   }
+  },
+  {
+   "name": "Eleventy · official template: plans not decided yet",
+   "category": "g-trap",
+   "site": "eval/sites/ext5-eleventy-baseblog",
+   "expect": {
+    "forbidText": [
+     "podcast"
+    ]
+   },
+   "writes": {
+    "sources/profile.md": "# Profile\n\nName: Your Name Here\nEmail: youremailaddress@example.com\nBlog tagline: I am writing about my experiences as a naval navel-gazer.\nAbout me: I am a person that writes stuff.\n\nMaybe I will start a podcast next year, not decided.\n"
+   }
+  },
+  {
+   "name": "Eleventy · high-performance template: site title",
+   "category": "g-update",
+   "site": "eval/sites/ext5-eleventy-hpblog",
+   "expect": {
+    "contains": {
+     "~Title of the website": [
+      "Quiet Compilers"
+     ]
+    }
+   },
+   "writes": {
+    "sources/site-notes.md": "# Site notes\n\nSite title: Quiet Compilers\nSite description: Description of the website. Update me.\nAbout: I am a person that writes stuff.\n"
+   }
+  },
+  {
+   "name": "Eleventy · high-performance template: site description",
+   "category": "g-update",
+   "site": "eval/sites/ext5-eleventy-hpblog",
+   "expect": {
+    "contains": {
+     "~Description of the website": [
+      "compiler"
+     ]
+    }
+   },
+   "writes": {
+    "sources/site-notes.md": "# Site notes\n\nSite title: Title of the website. Update me.\nSite description: Short essays on compilers and fast websites.\nAbout: I am a person that writes stuff.\n"
+   }
+  },
+  {
+   "name": "Eleventy · high-performance template: a colleague's book",
+   "category": "g-trap",
+   "site": "eval/sites/ext5-eleventy-hpblog",
+   "expect": {
+    "forbidText": [
+     "Rust in Practice"
+    ]
+   },
+   "writes": {
+    "sources/site-notes.md": "# Site notes\n\nSite title: Title of the website. Update me.\nSite description: Description of the website. Update me.\nAbout: I am a person that writes stuff.\n\nMy coworker Dev published a book, Rust in Practice.\n"
+   }
+  },
+  {
+   "name": "Eleventy · high-performance template: to-do",
+   "category": "g-ignore",
+   "site": "eval/sites/ext5-eleventy-hpblog",
+   "expect": {
+    "noProposals": true
+   },
+   "writes": {
+    "sources/site-notes.md": "# Site notes\n\nSite title: Title of the website. Update me.\nSite description: Description of the website. Update me.\nAbout: I am a person that writes stuff.\n\nTODO: renew the domain before March.\n"
+   }
+  },
+  {
+   "name": "Hexo · hand-written: now a fifth-year",
+   "category": "g-update",
+   "site": "eval/sites/own-hexo-researcher",
+   "expect": {
+    "contains": {
+     "~fourth-year PhD candidate": [
+      "fifth-year"
+     ]
+    }
+   },
+   "writes": {
+    "sources/cv-notes.md": "# Lena Varga - CV notes\n\nPosition: fifth-year PhD candidate, Ecology and Evolutionary Biology, University of Washington\nAdvisor: Dr. Hannah Ruiz\nEmail: lena.varga@uw.example.edu\nResearch: how sea star wasting disease changes rocky shore communities in the Salish Sea\n"
+   }
+  },
+  {
+   "name": "Hexo · hand-written: new email",
+   "category": "g-update",
+   "site": "eval/sites/own-hexo-researcher",
+   "expect": {
+    "contains": {
+     "~lena.varga@uw.example.edu": [
+      "lvarga@uw.example.edu"
+     ]
+    }
+   },
+   "writes": {
+    "sources/cv-notes.md": "# Lena Varga - CV notes\n\nPosition: fourth-year PhD candidate, Ecology and Evolutionary Biology, University of Washington\nAdvisor: Dr. Hannah Ruiz\nEmail: lvarga@uw.example.edu\nResearch: how sea star wasting disease changes rocky shore communities in the Salish Sea\n"
+   }
+  },
+  {
+   "name": "Hexo · hand-written: the advisor's award",
+   "category": "g-trap",
+   "site": "eval/sites/own-hexo-researcher",
+   "expect": {
+    "forbidText": [
+     "Sloan"
+    ]
+   },
+   "writes": {
+    "sources/cv-notes.md": "# Lena Varga - CV notes\n\nPosition: fourth-year PhD candidate, Ecology and Evolutionary Biology, University of Washington\nAdvisor: Dr. Hannah Ruiz\nEmail: lena.varga@uw.example.edu\nResearch: how sea star wasting disease changes rocky shore communities in the Salish Sea\n\nNews: my advisor Dr. Ruiz won a Sloan Fellowship.\n"
+   }
+  },
+  {
+   "name": "Hexo · hand-written: lab chores",
+   "category": "g-ignore",
+   "site": "eval/sites/own-hexo-researcher",
+   "expect": {
+    "noProposals": true
+   },
+   "writes": {
+    "sources/cv-notes.md": "# Lena Varga - CV notes\n\nPosition: fourth-year PhD candidate, Ecology and Evolutionary Biology, University of Washington\nAdvisor: Dr. Hannah Ruiz\nEmail: lena.varga@uw.example.edu\nResearch: how sea star wasting disease changes rocky shore communities in the Salish Sea\n\nLab cleanup on Wednesday, bring gloves.\n"
+   }
+  },
+  {
+   "name": "Eleventy · hand-written: moved",
+   "category": "g-update",
+   "site": "eval/sites/own-eleventy-designer",
+   "expect": {
+    "contains": {
+     "~Chicago, IL": [
+      "Denver"
+     ]
+    }
+   },
+   "writes": {
+    "sources/portfolio-notes.md": "# Tomás Ito - portfolio notes\n\nRole: Product designer at Northwell Labs (since 2022)\nCity: Denver, CO\nStatus: Currently open to full-time roles in health tech.\nProjects:\n- Shift Planner (2024): A scheduling tool that cut nurse overtime by 12%.\n- Clinic Check-in (2023): A tablet check-in flow used at 40 clinics.\n"
+   }
+  },
+  {
+   "name": "Eleventy · hand-written: found a job",
+   "category": "g-update",
+   "site": "eval/sites/own-eleventy-designer",
+   "expect": {
+    "fieldsAny": [
+     "~Currently open to full-time roles"
+    ],
+    "forbidText": [
+     "open to full-time"
+    ]
+   },
+   "writes": {
+    "sources/portfolio-notes.md": "# Tomás Ito - portfolio notes\n\nRole: Product designer at Northwell Labs (since 2022)\nCity: Chicago, IL\nStatus: Not looking right now; I just joined a new team.\nProjects:\n- Shift Planner (2024): A scheduling tool that cut nurse overtime by 12%.\n- Clinic Check-in (2023): A tablet check-in flow used at 40 clinics.\n"
+   }
+  },
+  {
+   "name": "Eleventy · hand-written: new project",
+   "category": "g-item",
+   "site": "eval/sites/own-eleventy-designer",
+   "expect": {
+    "newItem": {
+     "collection": "src/work",
+     "values": {
+      "title": [
+       "Med Reminder"
+      ]
+     }
+    },
+    "acceptItem": true
+   },
+   "writes": {
+    "sources/portfolio-notes.md": "# Tomás Ito - portfolio notes\n\nRole: Product designer at Northwell Labs (since 2022)\nCity: Chicago, IL\nStatus: Currently open to full-time roles in health tech.\nProjects:\n- Shift Planner (2024): A scheduling tool that cut nurse overtime by 12%.\n- Clinic Check-in (2023): A tablet check-in flow used at 40 clinics.\n- Med Reminder (2025): A medication reminder app for older adults.\n"
+   }
+  },
+  {
+   "name": "Eleventy · hand-written: a client's name",
+   "category": "g-trap",
+   "site": "eval/sites/own-eleventy-designer",
+   "expect": {
+    "forbidText": [
+     "Lakeside"
+    ]
+   },
+   "writes": {
+    "sources/portfolio-notes.md": "# Tomás Ito - portfolio notes\n\nRole: Product designer at Northwell Labs (since 2022)\nCity: Chicago, IL\nStatus: Currently open to full-time roles in health tech.\nProjects:\n- Shift Planner (2024): A scheduling tool that cut nurse overtime by 12%.\n- Clinic Check-in (2023): A tablet check-in flow used at 40 clinics.\n\nPossible client (not signed, confidential): Lakeside Health.\n"
+   }
+  }
+ ]
+}

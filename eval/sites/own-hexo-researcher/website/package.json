@@ -1,0 +1,7 @@
+{
+  "name": "hexo-site",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": { "build": "hexo generate", "server": "hexo server" },
+  "dependencies": { "hexo": "^8.0.0", "hexo-renderer-marked": "^7.0.0", "hexo-renderer-ejs": "^2.0.0", "hexo-theme-landscape": "^1.0.0" }
+}

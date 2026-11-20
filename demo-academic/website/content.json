@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "siteAdapter": "json-generic",
+  "_sitetend": {
+    "labels": {
+      "person.fullName": "Name",
+      "person.position": "Position",
+      "person.department": "Department",
+      "person.office": "Office",
+      "person.emailAddress": "Email",
+      "person.scholarProfile": "Google Scholar",
+      "person.bio": "Short bio",
+      "researchInterests": "Research interests",
+      "cv.lastRevised": "CV last revised"
+    }
+  },
+  "person": {
+    "fullName": "Dr. Priya Raman",
+    "position": "Assistant Professor of Information",
+    "department": "School of Information, Lakeview University",
+    "office": "Room 4312, North Quad · Office hours Tue 2–4 pm",
+    "emailAddress": "praman@lakeview.example.edu",
+    "scholarProfile": "https://scholar.example.org/citations?user=praman-demo",
+    "bio": "I study how people and AI systems keep shared documents trustworthy over time. My lab builds provenance-aware writing tools and evaluates them with newsrooms, libraries and civic groups."
+  },
+  "researchInterests": ["Human-AI collaboration", "Information provenance", "Computer-supported cooperative work", "Civic data"],
+  "news": [
+    { "id": "n-2026-09", "date": "Sep 2026", "text": "Our lab received an NSF CAREER award to study provenance in collaborative writing." },
+    { "id": "n-2026-05", "date": "May 2026", "text": "Two papers accepted to CSCW 2026." }
+  ],
+  "publications": [
+    { "id": "cscw26-trails", "year": "2026", "title": "Edit Trails: Making AI Suggestions Accountable in Shared Documents", "authors": "P. Raman, J. Ortiz, M. Chen", "venue": "CSCW 2026", "link": "https://doi.example.org/10.0000/cscw26-trails" },
+    { "id": "chi25-ledger", "year": "2025", "title": "Ledger Notes: Lightweight Provenance for Newsroom Fact-Checking", "authors": "P. Raman, A. Brooks", "venue": "CHI 2025", "link": "https://doi.example.org/10.0000/chi25-ledger" }
+  ],
+  "teaching": [
+    { "id": "info-670", "course": "INFO 670 · Applied Machine Learning for Information", "term": "Fall 2026", "role": "Instructor" },
+    { "id": "info-501", "course": "INFO 501 · Contextual Inquiry", "term": "Winter 2026", "role": "Instructor" }
+  ],
+  "lab": {
+    "name": "Provenance & Collaboration Lab",
+    "recruiting": "I am recruiting one PhD student for Fall 2027. Please read the lab FAQ before emailing.",
+    "members": ["Jamie Ortiz (PhD)", "Mei Chen (PhD)", "Sam Patel (MSI)"]
+  },
+  "cv": {
+    "lastRevised": "Revised August 2026"
+  }
+}

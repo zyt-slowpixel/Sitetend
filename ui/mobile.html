@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sitetend</title>
+<style>
+@font-face{font-family:"Inter";font-weight:400;src:url(/ui/fonts/Inter-Regular.woff) format("woff")}
+@font-face{font-family:"Inter";font-weight:600;src:url(/ui/fonts/Inter-SemiBold.woff) format("woff")}
+body{margin:0;font:16px/1.6 "Inter","PingFang SC","PingFang TC","Microsoft YaHei",system-ui,sans-serif;background:#f6f7f9;color:#24272c;display:flex;min-height:100vh;align-items:center;justify-content:center}
+main{max-width:420px;padding:32px 24px;text-align:center}
+h1{font-size:32px;line-height:1.25;margin:0 0 8px}.tag{color:#3d63a8;font-weight:600;margin:0 0 24px}
+p{color:#6c717a}.box{margin-top:32px;padding:16px;border:1px solid #e3e6eb;border-radius:12px;background:#fff;color:#41454c}
+@media (prefers-color-scheme:dark){body{background:#141518;color:#e8eaed}.tag{color:#8eabe0}p{color:#a3a7ae}.box{background:#1d1f24;border-color:#2c2f36;color:#c9ccd2}}
+</style>
+</head>
+<body>
+<main>
+  <h1>Sitetend</h1>
+  <p class="tag" data-k="mobile.tag">Your website, kept in sync with your materials.</p>
+  <p data-k="mobile.about">Sitetend watches your resume, profile and project notes on your computer, and suggests website updates with sources. You review, it writes, and every change can be undone.</p>
+  <div class="box"><strong data-k="mobile.title">Please open Sitetend on a computer.</strong><br><span data-k="mobile.text">It works with the files on your computer and needs a larger screen to review changes side by side with your website.</span></div>
+</main>
+<script>
+  // the phone's own language: Traditional Chinese for zh-Hant / TW / HK / MO, Simplified for other Chinese
+  const want = (navigator.languages || [navigator.language || 'en']).map(l => l.toLowerCase());
+  const pick = want.map(l => /^zh-(hant|tw|hk|mo)/.test(l) ? 'zh-Hant' : l.startsWith('zh') ? 'zh-Hans' : l.startsWith('es') ? 'es' : l.startsWith('en') ? 'en' : null).find(Boolean) || 'en';
+  // English is in the page; other languages come from the same locale files as the app.
+  const main = document.querySelector('main');
+  if (pick !== 'en') {
+    main.style.visibility = 'hidden';   // no flash of English before the translation arrives
+    fetch('/ui/locales/' + pick + '.json').then(r => r.ok ? r.json() : null).then(d => {
+      if (!d) return;
+      document.documentElement.lang = pick;
+      for (const el of document.querySelectorAll('[data-k]')) if (d[el.dataset.k]) el.textContent = d[el.dataset.k];
+    }).catch(() => {}).finally(() => { main.style.visibility = ''; });
+  }
+</script>
+</body>
+</html>

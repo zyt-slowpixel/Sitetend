@@ -1,0 +1,7 @@
+# Coastal Systems Lab — Jekyll site
+title: "Coastal Systems Lab"
+description: "We study how shorelines, storms and people change each other."
+email: coastal-lab@lakeview.example.edu
+address: "Room 210, Marine Science Building, Lakeview University"
+baseurl: ""
+theme: minima
